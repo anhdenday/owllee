@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    <base href="https://thanhuyhanoi.vn">-->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="REFRESH" content="1800"/>
+    <link rel="shortcut icon" type="image/jpg" href="https://thanhuyhanoi.vn/img/favicon.ico"/>
+    <link href="/lib/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet"/>
+    <link href="https://thanhuyhanoi.vn/lib/owl-carousel/assets/owl.theme.default.min.css" rel="stylesheet"/>
+    <link href="https://thanhuyhanoi.vn/lib/owl-carousel/assets/owl.theme.green.min.css" rel="stylesheet"/>
+    <link href="https://thanhuyhanoi.vn/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://thanhuyhanoi.vn/asset/css/include.css" rel="stylesheet"/>
+    <link href="https://thanhuyhanoi.vn/lib/select2/css/select2.min.css" rel="stylesheet"/>
+
+
+    <script src="https://thanhuyhanoi.vn/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="https://thanhuyhanoi.vn/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://thanhuyhanoi.vn/lib/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="https://thanhuyhanoi.vn/asset/js/toastr.min.js" type="text/javascript"></script>
+    <script src="https://thanhuyhanoi.vn/asset/common.js" type="text/javascript"></script>
+
+    <script src="https://thanhuyhanoi.vn/lib/select2/js/select2.min.js" type="text/javascript"></script>
+    <script src="https://thanhuyhanoi.vn/lib/purify/purify.js" type="text/javascript"></script>
+
+
+    <title>Trợ lý ảo</title>
+    <meta name="description" content="Hỏi đáp trả lời các câu hỏi của công dân"/>
+    <meta name="keywords" content="Hỏi đáp Thành Ủy, trả lời các câu hỏi của công dân"/>
+
+    <!-- META FOR FACEBOOK -->
+    <meta property="og:site_name" content="https://thanhuyhanoi.vn"/>
+    <meta property="og:rich_attachment" content="true"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" itemprop="url" content="http://thanhuyhanoi.vn/hoi-dap-truc-tuyen"/>
+    <meta content="/no-image.png" itemprop="thumbnailUrl" property="og:image"/>
+    <meta property="og:image:width" content="800"/>
+    <meta property="og:image:height" content="354"/>
+    <meta content="Hỏi đáp trực tuyến" itemprop="headline" property="og:title"/>
+    <meta content="Hỏi đáp trả lời các câu hỏi của công dân" itemprop="description" property="og:description"/>
+    <!-- END META FOR FACEBOOK -->
+
+    <!-- META FOR ZALO -->
+    <meta content="/no-image.png" itemprop="thumbnailUrl" property="og:image:alt"/>
+
+    <!-- END META FOR ZALO -->
+
+
+</head>
+<body>
+
+<div class="ajax" style="display: none;"></div>
+<div id="divshowmessage" class="cssshowmessage"></div>
+<input type="hidden" id="PortalVerificationToken" name="PortalVerificationToken"
+       value="CfDJ8PHo-8UMQONNvEZTP2jnNbYm3LMcH4pGtoYNakcMwU3D32IIBXxuy3B7Xr-CU-dihY8RFP7YKnwqarPTBwtmLWS2_WJYW7hmMMwEWANB9O-epIBTLkZqXTz8Yav0hGZ9KQTooh7arVkVhplHQhS3EI4">
+
+<div class="container container-main-header">
+    <div class="border-container" style="margin-bottom:0!important;">
+
+        <div id="contentheader">
+            <a id="logo" href="/">Logo</a>
+            <a id="menutopr" href="#"></a>
+        </div>
+
+
+        <link href="https://thanhuyhanoi.vn/asset/css/stellarnav.css" rel="stylesheet"/>
+
+        <style>
+
+            .stellarnav.dark {
+                background: #AB2918;
+            }
+
+            .stellarnav.dark a {
+                color: #FFFFFF;
+                font-family: Arial;
+                font-size: 11px;
+
+                line-height: 12.65px;
+            }
+
+            /*mobile*/
+            .stellarnav.dark .icon-close:after {
+                border-color: #FFFFFF;
+                border-bottom-width: 2px;
+            }
+
+            /*mobile*/
+            .stellarnav.dark .icon-close:before {
+                border-color: #FFFFFF;
+                border-bottom-width: 2px;
+            }
+
+
+            .stellarnav.dark ul ul li a {
+                color: #FFFFFF;
+                background: #AB2918;
+            }
+
+            .stellarnav.dark ul ul li a:hover {
+                color: #FFFFFF;
+            }
+
+            .stellarnav.dark a.dd-toggle .icon-plus:before {
+                border-color: #FFFFFF;
+                border-bottom-width: 2px;
+            }
+
+            .stellarnav.dark a.dd-toggle .icon-plus:after {
+                border-color: #FFFFFF;
+                border-bottom-width: 2px;
+            }
+
+            /*căn chỉnh chữ menu*/
+            .stellarnav.dark.right .menu-toggle {
+                float: right;
+            }
+
+            .stellarnav .icon-close:after {
+                border-color: #FFFFFF;
+                border-bottom-width: 2px;
+            }
+
+            .stellarnav .icon-close:before {
+                border-color: #FFFFFF;
+                border-bottom-width: 2px;
+            }
+
+            /*common*/
+            /*nút home*/
+            .stellarnav li.fistchild a {
+                padding: 8px 0 8px 0;
+                padding-right: 5px; /*Note: if font-weight: bold, padding-right: 4.7px; if font-weight:normal, padding-right: 5px; */
+            }
+
+            .stellarnav ul li.fistchild a.active {
+                border-width: 0px;
+            }
+
+            .stellarnav ul li.has-sub {
+            }
+
+            .stellarnav ul li:hover {
+                background-color: #d33737;
+            }
+
+            .stellarnav li a {
+                border-bottom: 0px;
+                padding: 8px 0 8px 0;
+            }
+
+            .stellarnav li a:hover {
+                color: #FFFFFF;
+                background-color: #d33737;
+            }
+
+            /*desktop*/
+            .stellarnav.desktop li {
+                padding: 0 25px;
+            }
+
+            .stellarnav.desktop li.fistchild {
+                padding: 0 18px;
+                border-left: none !important;
+            }
+
+            .stellarnav.desktop li.has-sub ul li a:hover {
+                background-color: #d33737;
+            }
+
+            .stellarnav.desktop li.has-sub a span {
+                font-weight: bold;
+                line-height: 20px;
+            }
+
+            .stellarnav.desktop li.has-sub > ul {
+                padding-right: 0px;
+                top: 100%; /*fix vi tri menu con*/
+                left: 0px;
+            }
+
+            .stellarnav.desktop > ul {
+                display: flex;
+                flex-wrap: nowrap;
+                border-top: 1px solid #fff;
+            }
+
+            .stellarnav.desktop > ul > li {
+                border-left: 1px solid #FFFFFF;
+
+                display: flex;
+            }
+
+
+            .stellarnav.desktop ul li.has-sub > a {
+                text-align: center;
+                padding-right: 5px;
+            }
+
+            .stellarnav li li {
+                background: #AB2918;
+            }
+
+            /*begin:: menu stellarnav mobile*/
+            .stellarnav.mobile > ul > li {
+                border-bottom-width: 1px;
+                border-bottom-color: #FFFFFF;
+                border-bottom-style: solid;
+            }
+
+            .stellarnav.mobile ul li:hover {
+                background-color: #AB2918; /*không để hover*/
+            }
+
+            /*menu con*/
+            .stellarnav.mobile > ul > li a {
+                border-bottom: 0px;
+                padding: 10px 0 10px 0;
+            }
+
+            .stellarnav.mobile > ul > li a:hover {
+                background-color: #AB2918; /*không để hover*/
+            }
+
+            .stellarnav.mobile.dark ul {
+                background: #AB2918;
+            }
+
+            .stellarnav .dd-toggle {
+                width: 30px;
+                height: 30px;
+            }
+
+            .stellarnav .icon-close {
+                right: 0px;
+            }
+
+            /*end:: menu stellarnav mobile*/
+
+        </style>
+
+        <!--Begin:: .stellarnav -->
+        <div class="stellarnav">
+            <ul>
+                <li class="fistchild">
+                    <a href="https://thanhuyhanoi.vn" title="Trang chủ" class="active text-uppercase">
+                        <img src="https://thanhuyhanoi.vn/img/home.png" alt="Trang chủ"/>
+                    </a>
+                </li>
+                <li class=has-sub>
+                    <a data-item="lvl0-/intruduce/to-chuc-bo-may-20000045" class="t-menu text-uppercase"
+                       href="https://thanhuyhanoi.vn/intruduce/to-chuc-bo-may-20000045"
+                       title="Gi&#x1EDB;i thi&#x1EC7;u">
+                        <span>Gi&#x1EDB;i thi&#x1EC7;u</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a data-root-item="lvl0-/intruduce/to-chuc-bo-may-20000045"
+                               class="t-child-menu text-uppercase"
+                               href="https://thanhuyhanoi.vn/intruduce/to-chuc-bo-may-20000045"
+                               title="T&#x1ED5; ch&#x1EE9;c b&#x1ED9; m&#xE1;y">T&#x1ED5; ch&#x1EE9;c b&#x1ED9;
+                                m&#xE1;y</a>
+                        </li>
+                        <li>
+                            <a data-root-item="lvl0-/intruduce/to-chuc-bo-may-20000045"
+                               class="t-child-menu text-uppercase"
+                               href="https://thanhuyhanoi.vn/intruduce/lich-su-dang-bo-20000040"
+                               title="L&#x1ECB;ch s&#x1EED; &#x111;&#x1EA3;ng b&#x1ED9;">L&#x1ECB;ch s&#x1EED; &#x111;&#x1EA3;ng
+                                b&#x1ED9;</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=has-sub>
+                    <a data-item="lvl0-/tin-tuc/chinh-tri-12501123" class="t-menu text-uppercase"
+                       href="https://thanhuyhanoi.vn/tin-tuc/chinh-tri-12501123" title="Ch&#xED;nh tr&#x1ECB;">
+                        <span>Ch&#xED;nh tr&#x1ECB;</span>
+                    </a>
+                </li>
+                <li class=has-sub>
+                    <a data-item="lvl0-/tin-tuc/xay-dung-dang-12501127" class="t-menu text-uppercase"
+                       href="https://thanhuyhanoi.vn/tin-tuc/xay-dung-dang-12501127"
+                       title="X&#xE2;y d&#x1EF1;ng &#x111;&#x1EA3;ng">
+                        <span>X&#xE2;y d&#x1EF1;ng &#x111;&#x1EA3;ng</span>
+                    </a>
+                </li>
+                <li class=has-sub>
+                    <a data-item="lvl0-/tin-tuc/hoat-dong-cua-lanh-dao-thanh-pho-12501122" class="t-menu text-uppercase"
+                       href="https://thanhuyhanoi.vn/tin-tuc/hoat-dong-cua-lanh-dao-thanh-pho-12501122"
+                       title="HO&#x1EA0;T &#x110;&#x1ED8;NG C&#x1EE6;A L&#xC3;NH &#x110;&#x1EA0;O TH&#xC0;NH PH&#x1ED0;">
+                        <span>HO&#x1EA0;T &#x110;&#x1ED8;NG C&#x1EE6;A L&#xC3;NH &#x110;&#x1EA0;O TH&#xC0;NH PH&#x1ED0;</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a data-root-item="lvl0-/tin-tuc/hoat-dong-cua-lanh-dao-thanh-pho-12501122"
+                               class="t-child-menu text-uppercase"
+                               href="https://thanhuyhanoi.vn/tin-tuc/bi-thu-thanh-uy-12738034"
+                               title="B&#xCD; TH&#x1AF; TH&#xC0;NH &#x1EE6;Y">B&#xCD; TH&#x1AF; TH&#xC0;NH &#x1EE6;Y</a>
+                        </li>
+                        <li>
+                            <a data-root-item="lvl0-/tin-tuc/hoat-dong-cua-lanh-dao-thanh-pho-12501122"
+                               class="t-child-menu text-uppercase"
+                               href="https://thanhuyhanoi.vn/tin-tuc/thuong-truc-thanh-uy-12665606"
+                               title="TH&#x1AF;&#x1EDC;NG TR&#x1EF0;C TH&#xC0;NH &#x1EE6;Y">TH&#x1AF;&#x1EDC;NG TR&#x1EF0;C
+                                TH&#xC0;NH &#x1EE6;Y</a>
+                        </li>
+                        <li>
+                            <a data-root-item="lvl0-/tin-tuc/hoat-dong-cua-lanh-dao-thanh-pho-12501122"
+                               class="t-child-menu text-uppercase"
+                               href="https://thanhuyhanoi.vn/tin-tuc/hdnd-thanh-pho-12665607"
+                               title="H&#x110;ND TH&#xC0;NH PH&#x1ED0;">H&#x110;ND TH&#xC0;NH PH&#x1ED0;</a>
+                        </li>
+                        <li>
+                            <a data-root-item="lvl0-/tin-tuc/hoat-dong-cua-lanh-dao-thanh-pho-12501122"
+                               class="t-child-menu text-uppercase"
+                               href="https://thanhuyhanoi.vn/tin-tuc/ubnd-thanh-pho-12665624"
+                               title="UBND TH&#xC0;NH PH&#x1ED0;">UBND TH&#xC0;NH PH&#x1ED0;</a>
+                        </li>
+                        <li>
+                            <a data-root-item="lvl0-/tin-tuc/hoat-dong-cua-lanh-dao-thanh-pho-12501122"
+                               class="t-child-menu text-uppercase"
+                               href="https://thanhuyhanoi.vn/tin-tuc/ub-mttqvn-thanh-pho-12665625"
+                               title="UB MTTQVN TH&#xC0;NH PH&#x1ED0; TH&#xC0;NH PH&#x1ED0;">UB MTTQVN TH&#xC0;NH PH&#x1ED0;
+                                TH&#xC0;NH PH&#x1ED0;</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=has-sub>
+                    <a data-item="lvl0-/tin-tuc/kinh-te-van-hoa-xa-hoi-12501124" class="t-menu text-uppercase"
+                       href="https://thanhuyhanoi.vn/tin-tuc/kinh-te-van-hoa-xa-hoi-12501124"
+                       title="KINH T&#x1EBE; - V&#x102;N H&#xD3;A - X&#xC3; H&#x1ED8;I">
+                        <span>KINH T&#x1EBE; - V&#x102;N H&#xD3;A - X&#xC3; H&#x1ED8;I</span>
+                    </a>
+                </li>
+                <li class=has-sub>
+                    <a data-item="lvl0-/tin-tuc/an-ninh-quoc-phong-12501125" class="t-menu text-uppercase"
+                       href="https://thanhuyhanoi.vn/tin-tuc/an-ninh-quoc-phong-12501125"
+                       title="AN NINH - QU&#x1ED0;C PH&#xD2;NG">
+                        <span>AN NINH - QU&#x1ED0;C PH&#xD2;NG</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--End:: .stellarnav -->
+
+        <script src="https://thanhuyhanoi.vn/asset/js/stellarnav.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                //init
+                $('.stellarnav').stellarNav({
+                    theme: 'dark',
+                    breakpoint: 768,
+                    position: 'right',
+                    phoneBtn: '',
+                    locationBtn: '',
+                    menuLabel: '',  //không hiển thị chữ menu
+                    closeLabel: ''
+                });
+
+                $(".t-menu").each(function (item, index) {
+                    var href = $(this).attr("href");
+                    if (href !== "/") {
+                        if ("http://thanhuyhanoi.vn/hoi-dap-truc-tuyen".indexOf(href) > 0) {
+                            $(".t-menu").removeClass("active");
+                            $(this).addClass("active");
+                        }
+                    }
+                });
+
+                $(".t-child-menu").each(function (item, index) {
+
+                    var href = $(this).attr("href");
+                    var hrefParent = $(this).attr("data-root-item");
+                    if (href !== "/") {
+                        if ("http://thanhuyhanoi.vn/hoi-dap-truc-tuyen".indexOf(href) > 0) {
+                            $(".t-menu").each(function (item, index) {
+                                var hrefParetRoot = $(this).attr("data-item");
+                                if (hrefParetRoot === hrefParent) {
+                                    $(".t-menu").removeClass("active");
+                                    $(this).addClass("active");
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            function ToggleHeadeMenu() {
+                var x = document.getElementById('myTopnav')
+                if (x.className === 'topnav') {
+                    x.className += ' responsive'
+                } else {
+                    x.className = 'topnav'
+                }
+            }
+        </script>
+        <div class="nav-line d-flex align-items-center justify-content-md-between flex-column flex-md-row"
+             id="ClockAndSearchSection">
+            <div class="ml-md-2 py-2">
+                <span id="point_portal_egov_date">Th&#x1EE9; N&#x103;m, Ngày 28/11/2024</span>
+                <span id="point_portal_egov_clock"> | 09:42:22</span>
+            </div>
+            <form class="form-search-head" action="/tim-kiem" method="get" onsubmit="return validateForm()">
+                <div class="search position-relative mr-md-1">
+                    <input class="text_search" name="keyWord" type="text" placeholder="Tìm kiếm....." id="searchInput">
+                    <button class="bt_search" type="submit"></button>
+                </div>
+            </form>
+        </div>
+        <script>
+            $(document).ready(function () {
+                clockUpdate();
+                setInterval(clockUpdate, 1000);
+            })
+
+            function clockUpdate() {
+                var date = new Date();
+
+                function addZero(x) {
+                    if (x < 10) {
+                        return x = '0' + x;
+                    } else {
+                        return x;
+                    }
+                }
+
+                function twelveHour(x) {
+                    if (x > 12) {
+                        return x = x - 12;
+                    } else if (x == 0) {
+                        return x = 12;
+                    } else {
+                        return x;
+                    }
+                }
+
+                var h = addZero(twelveHour(date.getHours()));
+                var m = addZero(date.getMinutes());
+                var s = addZero(date.getSeconds());
+
+                $('#point_portal_egov_clock').text(h + ':' + m + ':' + s)
+            }
+
+            function validateForm() {
+                var keyword = document.getElementById("searchInput").value;
+                if (keyword.trim() === "") {
+                    return false; // Ngăn form được submit
+                }
+                return true; // Cho phép form được submit nếu có giá trị nhập vào
+            }
+        </script>
+    </div>
+</div>
+<div class="container mb-5 container-main">
+    <div class="border-container-2" style="margin-top:0!important;background:#fff; ">
+
+        <link rel="stylesheet" href="https://thanhuyhanoi.vn/asset/css/pages/hoidaptructuyen.css"/>
+
+
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="ui">
+                    <section class="portlet">
+                        <header class="portlet-topper">
+                            <a onclick="window.location.href='tro-ly-ao.html';">
+                                <h1 class="portlet-title">
+                                    <span class="portlet-title-icon"> &nbsp; </span> <span class="portlet-title-text">TRỢ LÝ ẢO</span>
+                                </h1>
+                            </a>
+                            <menu class="portlet-topper-toolbar" type="toolbar"></menu>
+                        </header>
+                        <div class="portlet-content">
+                            <div class=" portlet-content-container">
+                                <div class="portlet-body">
+                                    <div class="row m-0">
+                                        <iframe
+                                                src="https://owllee.io/mobi-iframe/6743ea74f90a6e7b0ba3b1f4"
+                                                width="100%"
+                                                height="680px"
+                                                frameborder="0"
+                                                allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://thanhuyhanoi.vn/asset/js/pages/hoidap.js"></script>
+    </div>
+</div>
+<footer id="footer">
+    <a href="https://tinnhiemmang.vn/danh-ba-tin-nhiem/httpsthanhuyhanoivn-1623397385" target="_blank">
+        <img src="https://tinnhiemmang.vn/handle_cert?id=thanhuyhanoi.vn" width="150px" height="auto">
+    </a>
+    <!-- <p class="vetrang"><a style="color: #0D03E6;" href="index.html">| Về đầu trang |</a> -->
+    <a style="color: #0D03E6;" href="#"></a>
+    </p>
+    <div class="box_f" align="center">
+        <span class="text_f">
+            <span>
+                Trang thông tin điện tử Đảng bộ Thành phố Hà
+                Nội
+            </span> <br>Giấy phép hoạt động số: 2674/GP-TTĐT cấp ngày ngày 16 tháng 5 năm 2019 <br>Địa chỉ: Tầng
+            4, Tòa nhà trụ sở Thành ủy, số 9 Ngô Quyền, Hoàn Kiếm, Hà Nội. <br>Điện thoại: 024 322 32045. Email:
+            trangtindientuthanhuy@hanoi.gov.vn <br>
+        </span>
+    </div>
+</footer>
+
+
+</body>
+</html>
