@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LMS VinSchool Assistant</title>
+    <style>
+        .full-screen-image {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        /* Bong bóng Edubot */
+        #custom-edubot-bubble {
+            position: fixed;
+            right: 40px;
+            bottom: 40px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #3071FF;
+            color: #fff;
+            box-shadow: 0 4px 16px #0002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 12000;
+            transition: background 0.2s;
+            user-select: none;
+        }
+        #custom-edubot-bubble:hover {
+            background: #18459b;
+        }
+        #custom-edubot-bubble .edubot-icon {
+            font-size: 36px;
+            margin-right: 6px;
+        }
+
+        /* Menu chọn bot */
+        #edubot-menu {
+            position: fixed;
+            right: 40px;
+            bottom: 140px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 32px #0003;
+            padding: 12px 0;
+            min-width: 220px;
+            display: none;
+            flex-direction: column;
+            z-index: 13000;
+            border: 1px solid #eee;
+        }
+        .edubot-menu-item {
+            padding: 14px 28px;
+            font-size: 16px;
+            color: #3071FF;
+            cursor: pointer;
+            background: #fff;
+            border: none;
+            text-align: left;
+            outline: none;
+            transition: background 0.18s;
+        }
+        .edubot-menu-item:hover {
+            background: #eaf2ff;
+        }
+        .edubot-menu-title {
+            padding: 8px 28px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        /* Nút đóng popup */
+        #edubot-menu-close {
+            position: absolute;
+            top: 7px;
+            right: 13px;
+            font-size: 22px;
+            color: #aaa;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1;
+        }
+        #edubot-menu-close:hover {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+   <img src="LMS.png" class="full-screen-image" alt="LMS VinSchool Assistant">
+
+   <!-- Bong bóng Edubot -->
+   <div id="custom-edubot-bubble" onclick="toggleMenu()">
+      <span class="edubot-icon">🤖</span> Edubot
+   </div>
+
+   <!-- Menu chọn bot -->
+   <div id="edubot-menu">
+      <button id="edubot-menu-close" onclick="closeMenu()">&times;</button>
+      <div class="edubot-menu-title">Chọn trợ lý Edubot</div>
+      <button class="edubot-menu-item" onclick="selectBot('student')">Edubot - học sinh</button>
+      <button class="edubot-menu-item" onclick="selectBot('parent')">Edubot - Phụ huynh</button>
+   </div>
+
+   <script>
+    // Cấu hình bot
+    const botConfigs = {
+      student: {
+        id: '68873896a5ab5e110336bd56'
+      },
+      parent: {
+        id: '68898ff05799bf80be10a78a'
+      }
+    };
+
+    // Trạng thái menu
+    function toggleMenu() {
+      const menu = document.getElementById('edubot-menu');
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+    function closeMenu() {
+      document.getElementById('edubot-menu').style.display = "none";
+    }
+    // Click ngoài menu sẽ tự đóng
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('edubot-menu');
+      const bubble = document.getElementById('custom-edubot-bubble');
+      if (
+        menu.style.display === "flex" &&
+        !menu.contains(e.target) &&
+        !bubble.contains(e.target)
+      ) {
+        menu.style.display = "none";
+      }
+    });
+
+    // Xoá bot cũ
+    function removeOwllaBot() {
+      // Xoá script
+      document.querySelectorAll('script[data-chat-service]').forEach(el => el.remove());
+      // Xoá các iframe hoặc div popup chatbot
+      document.querySelectorAll('iframe[src*="agent.owllee.io"], .owlla-chatbot-bubble, .owlla-chatbot-container').forEach(el => el.remove());
+    }
+
+    // Hàm ẩn bong bóng mặc định Owllee (CSS hoặc xóa node)
+    function hideDefaultOwllaBubble() {
+      // CSS cứng để ẩn mọi bubble của Owllee
+      let css = `
+      .owlla-chatbot-bubble,
+      .owlla-chatbot-bubble *, 
+      .owlla-chatbot-bubble[style] { display:none!important; opacity:0!important; pointer-events:none!important; }
+      `;
+      let style = document.getElementById('owlla-hide-bubble');
+      if (!style) {
+        style = document.createElement('style');
+        style.id = 'owlla-hide-bubble';
+        style.innerHTML = css;
+        document.head.appendChild(style);
+      }
+      // Ngoài ra, xóa node bubble cứng nếu có
+      setTimeout(() => {
+        document.querySelectorAll('.owlla-chatbot-bubble').forEach(el => el.remove());
+      }, 500);
+    }
+
+    // Hàm tự động click mở chat (nếu cần, Owllee không có hàm open public)
+    function autoOpenOwllaChat() {
+      setTimeout(() => {
+        // Thử tìm frame hoặc popup của owllee, nếu có bubble thì click vào
+        let bubble = document.querySelector('.owlla-chatbot-bubble');
+        if (bubble) {
+          bubble.click();
+        } else {
+          // Nếu không có, thử click lại sau (load chậm)
+          setTimeout(() => {
+            let bubble2 = document.querySelector('.owlla-chatbot-bubble');
+            if (bubble2) bubble2.click();
+          }, 400);
+        }
+      }, 600); // Chờ cho owllee load hết UI mới click
+    }
+
+    // Load bot và mở chat ngay, ẩn bubble mặc định
+    function selectBot(type) {
+      closeMenu();
+      removeOwllaBot();
+      hideDefaultOwllaBubble(); // Gắn css trước
+      setTimeout(() => {
+        const script = document.createElement('script');
+        script.src = "https://agent.owllee.io/resources/statics/cdn/owlla_chatbot.js";
+        script.setAttribute('data-chat-service', 'Salebot');
+        script.setAttribute('data-bot-id', botConfigs[type].id);
+        script.setAttribute('data-chat-domain', 'https://agent.owllee.io');
+        script.setAttribute('data-chat-width', '450px');
+        script.setAttribute('data-chat-height', '600px');
+        script.setAttribute('data-bubble-color', '#3071FF');
+        script.setAttribute('data-hide-bubble', 'true'); // Owllee chưa support, phòng khi có
+        document.body.appendChild(script);
+
+        // Đợi owllee load xong mới click auto mở chat + ẩn bubble
+        setTimeout(() => {
+          hideDefaultOwllaBubble();
+          autoOpenOwllaChat();
+        }, 1500);
+      }, 120);
+    }
+
+    // KHÔNG load bot nào mặc định, chỉ hiện bong bóng Edubot tự custom!
+    // Khi chọn menu mới load + auto bật chat
+   </script>
+</body>
+</html>
