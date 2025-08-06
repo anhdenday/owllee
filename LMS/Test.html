@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LMS VinSchool Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://github.com/anhdenday/owllee/blob/main/LMS/LMS.png?raw=true') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 40px 24px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.97);
+      min-height: 100vh;
+      border-radius: 16px;
+      box-shadow: 0 0 32px #0002;
+      position: relative;
+    }
+
+    @media (max-width: 1280px) {
+      .main-container {
+        max-width: 100%;
+        padding: 20px 6px 32px 6px;
+        border-radius: 0;
+      }
+    }
+
+    /* Bong bóng Edubot */
+    #custom-edubot-bubble {
+      position: fixed;
+      right: 40px;
+      bottom: 40px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #FFF;
+      color: #fff;
+      box-shadow: 0 4px 16px #0005;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      z-index: 12000;
+      transition: background 0.2s;
+      user-select: none;
+    }
+
+    .edubot-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    #custom-edubot-bubble .edubot-icon {
+      font-size: 36px;
+      margin-right: 6px;
+    }
+
+    .edubot-icon-close {
+      font-size: 100px;
+      width: 100px;
+      height: 100px;
+      font-weight: bold;
+      color: #888;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+
+    /* Menu chọn bot */
+    #edubot-menu {
+      position: fixed;
+      right: 40px;
+      bottom: 95px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 32px #0003;
+      padding: 12px 0;
+      min-width: 220px;
+      display: none;
+      flex-direction: column;
+      z-index: 13000;
+      border: 1px solid #eee;
+    }
+
+    .edubot-menu-item {
+      padding: 14px 20px;
+      font-size: 16px;
+      color: #3071FF;
+      cursor: pointer;
+      background: #fff;
+      border: none;
+      text-align: left;
+      outline: none;
+      transition: background 0.18s;
+    }
+
+    .edubot-menu-item:hover {
+      background: #eaf2ff;
+    }
+
+    .edubot-menu-title {
+      padding: 8px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 10px;
+      font-family: sans-serif;
+      border-bottom: 1px solid #eee;
+    }
+
+    #edubot-menu-close {
+      position: absolute;
+      top: 15px;
+      right: 13px;
+      font-size: 22px;
+      color: #aaa;
+      cursor: pointer;
+      background: none;
+      border-radius: 4px;
+      border: none;
+      z-index: 1;
+    }
+
+    #edubot-menu-close:hover {
+      color: #f44336;
+      background-color: #f9d5d1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- ==== GIAO DIỆN LMS GỐC BẮT ĐẦU ==== -->
+
+    <!-- Thanh menu điều hướng -->
+    <div style="display: flex; align-items: center; padding-bottom: 16px;">
+      <img src="https://github.com/anhdenday/owllee/blob/main/LMS/vinschool_logo.png?raw=true"
+        alt="Vinschool Logo" style="height:54px; margin-right: 20px;">
+      <div style="flex:1;">
+        <a href="#" style="text-decoration:none; color:#222; font-weight:bold; font-size:20px; vertical-align: middle;">Home</a>
+        <a href="#" style="text-decoration:none; color:#3071FF; margin-left:34px;">Courses</a>
+        <a href="#" style="text-decoration:none; color:#3071FF; margin-left:34px;">Timetable</a>
+        <a href="#" style="text-decoration:none; color:#3071FF; margin-left:34px;">Inbox</a>
+      </div>
+      <div style="margin-left: auto; display: flex; align-items: center;">
+        <span style="color: #f44336; font-size:15px; margin-right:18px;"><b>80</b></span>
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" style="height:34px; border-radius: 50%;">
+      </div>
+    </div>
+
+    <!-- Tiêu đề -->
+    <div style="padding: 12px 0 24px 0;">
+      <b>Hello NGUYỄN CHÂU ANH!</b>
+    </div>
+
+    <!-- Menu chức năng -->
+    <div style="display: flex; gap: 30px; flex-wrap:wrap; margin-bottom:24px;">
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" style="height:54px;">
+        <div>Module</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/2618/2618557.png" style="height:54px;">
+        <div>Quiz</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/3588/3588737.png" style="height:54px;">
+        <div>Assignment</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/3595/3595455.png" style="height:54px;">
+        <div>Grade</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/3500/3500833.png" style="height:54px;">
+        <div>Discussion</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/1828/1828919.png" style="height:54px;">
+        <div>Comment <span style="color:#f44336;">77</span></div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/2991/2991108.png" style="height:54px;">
+        <div>Report</div>
+      </div>
+    </div>
+
+    <!-- Todo -->
+    <div style="background: #f8f8f8; padding: 12px 20px; border-radius: 10px; margin-bottom: 16px;">
+      <b>Todo</b><br>
+      <span style="color:#888;">Don't have any assignment need to be done</span>
+    </div>
+
+    <!-- Bố cục 2 cột: courses | timetable -->
+    <div style="display: flex; gap: 32px;">
+      <!-- Courses -->
+      <div style="flex: 2;">
+        <div style="font-weight:bold; margin-bottom:8px;">Courses</div>
+        <!-- 1 course -->
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/2910/2910768.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">MATHS</div>
+            <div style="color:#888; font-size:13px;">Last access 7/23/2025 10:46:26 AM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/3013/3013912.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">NATURAL SCIENCE</div>
+            <div style="color:#888; font-size:13px;">Last access 7/22/2025 7:35:34 PM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">ESL</div>
+            <div style="color:#888; font-size:13px;">Last access 7/22/2025 4:15:56 PM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">VIETNAMESE LANGUAGE</div>
+            <div style="color:#888; font-size:13px;">Last access 6/10/2025 4:19:39 PM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+      </div>
+      <!-- Timetable -->
+      <div style="flex: 1; min-width:230px;">
+        <div style="background:#fff; border-radius:16px; box-shadow: 0 2px 8px #0001; padding:20px;">
+          <div style="display:flex; gap: 12px;">
+            <button style="flex:1; background:#6a4eea; color:#fff; border:none; border-radius:8px 8px 0 0; padding:6px 0;">Timetable</button>
+            <button style="flex:1; background:#f4ede9; color:#b49e92; border:none; border-radius:8px 8px 0 0; padding:6px 0;">Planned task</button>
+          </div>
+          <div style="padding: 18px 0 0 0;">
+            <b>July 2025</b>
+            <table style="width:100%; border-collapse:collapse; color:#222; text-align:center; margin-top: 10px;">
+              <tr style="color:#bbb;">
+                <td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td>
+              </tr>
+              <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+              <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+              <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+              <tr><td>20</td><td>21</td><td>22</td><td style="background:#eee; border-radius:50%; color:#6a4eea;">23</td><td>24</td><td>25</td><td>26</td></tr>
+              <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+            </table>
+            <div style="font-size:13px; color:#888; margin-top:12px;">7/23/2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==== GIAO DIỆN LMS GỐC KẾT THÚC ==== -->
+  </div>
+
+  <!-- Bong bóng Edubot -->
+  <div id="custom-edubot-bubble" onclick="toggleMenu()">
+    <img src="https://agent.owllee.io/resources/files/agent/avatar/27b7db7e511847acb32b6b2b7b6bea43.jpeg"
+      alt="Edubot Avatar" class="edubot-avatar" />
+  </div>
+
+  <!-- Menu chọn bot -->
+  <div id="edubot-menu">
+    <button id="edubot-menu-close" onclick="closeMenu()">&times;</button>
+    <div class="edubot-menu-title">Chọn trợ lý Edubot</div>
+    <button class="edubot-menu-item" onclick="selectBot('student')">Edubot - Học sinh</button>
+    <button class="edubot-menu-item" onclick="selectBot('parent')">Edubot - Phụ huynh</button>
+  </div>
+
+  <script>
+    // Cấu hình bot
+    const botConfigs = {
+      student: {
+        id: '68873896a5ab5e110336bd56'
+      },
+      parent: {
+        id: '68898ff05799bf80be10a78a'
+      }
+    };
+
+    // Trạng thái menu
+    function toggleMenu() {
+      const menu = document.getElementById('edubot-menu');
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+    function closeMenu() {
+      document.getElementById('edubot-menu').style.display = "none";
+    }
+    // Click ngoài menu sẽ tự đóng
+    document.addEventListener('click', function (e) {
+      const menu = document.getElementById('edubot-menu');
+      const bubble = document.getElementById('custom-edubot-bubble');
+      if (
+        menu.style.display === "flex" &&
+        !menu.contains(e.target) &&
+        !bubble.contains(e.target)
+      ) {
+        menu.style.display = "none";
+      }
+    });
+
+    let isPopupOpen = false;
+
+    function setBubbleNormal() {
+      const bubble = document.getElementById('custom-edubot-bubble');
+      bubble.innerHTML = `
+        <img
+          src="https://agent.owllee.io/resources/files/agent/avatar/27b7db7e511847acb32b6b2b7b6bea43.jpeg"
+          alt="Edubot Avatar"
+          class="edubot-avatar"
+        />
+      `;
+      bubble.style.background = "#fff";
+      bubble.onclick = toggleMenu;
+    }
+
+    function setBubbleClose() {
+      const bubble = document.getElementById('custom-edubot-bubble');
+      bubble.innerHTML = `
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <line x1="10" y1="10" x2="22" y2="22" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <line x1="22" y1="10" x2="10" y2="22" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      `;
+      bubble.style.background = "#18459b";
+      bubble.onclick = hideEdubotPopup;
+    }
+
+    function hideEdubotPopup() {
+      document.querySelectorAll('.edubot-iframe').forEach(el => el.remove());
+      isPopupOpen = false;
+      setBubbleNormal();
+    }
+
+    // Xoá bot cũ
+    function removeOwllaBot() {
+      // Xoá script
+      document.querySelectorAll('script[data-chat-service]').forEach(el => el.remove());
+      // Xoá các iframe hoặc div popup chatbot
+      document.querySelectorAll('iframe[src*="agent.owllee.io"], .owlla-chatbot-bubble, .owlla-chatbot-container').forEach(el => el.remove());
+    }
+
+    // Hàm ẩn bong bóng mặc định Owllee (CSS hoặc xóa node)
+    function hideDefaultOwllaBubble() {
+      // CSS cứng để ẩn mọi bubble của Owllee
+      let css = `
+      .owlla-chatbot-bubble,
+      .owlla-chatbot-bubble *, 
+      .owlla-chatbot-bubble[style] { display:none!important; opacity:0!important; pointer-events:none!important; }
+      `;
+      let style = document.getElementById('owlla-hide-bubble');
+      if (!style) {
+        style = document.createElement('style');
+        style.id = 'owlla-hide-bubble';
+        style.innerHTML = css;
+        document.head.appendChild(style);
+      }
+      setTimeout(() => {
+        document.querySelectorAll('.owlla-chatbot-bubble').forEach(el => el.remove());
+      }, 500);
+    }
+
+    // Load bot và mở chat ngay, ẩn bubble mặc định
+    function selectBot(type) {
+      closeMenu();
+      removeOwllaBot();
+      hideDefaultOwllaBubble();
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://agent.owllee.io/chatbot-iframe/${botConfigs[type].id}`;
+      iframe.width = "450px";
+      iframe.height = "600px";
+      iframe.style.position = "fixed";
+      iframe.style.right = "40px";
+      iframe.style.bottom = "100px";
+      iframe.style.zIndex = "10000";
+      iframe.style.borderRadius = "16px";
+      iframe.style.boxShadow = "0 4px 16px #0002";
+      iframe.style.border = "none";
+      iframe.className = "edubot-iframe";
+      document.body.appendChild(iframe);
+
+      isPopupOpen = true;
+      setBubbleClose();
+    }
+
+    // KHÔNG load bot nào mặc định, chỉ hiện bong bóng Edubot tự custom!
+    // Khi chọn menu mới load + auto bật chat
+  </script>
+</body>
+
+</html>
