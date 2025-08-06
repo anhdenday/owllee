@@ -4,12 +4,31 @@
 <head>
   <title>LMS VinSchool Assistant</title>
   <style>
-    .full-screen-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
+    body {
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 40px 24px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.97);
+      min-height: 100vh;
+      border-radius: 16px;
+      box-shadow: 0 0 32px #0002;
+      position: relative;
+    }
+
+    @media (max-width: 1280px) {
+      .main-container {
+        max-width: 100%;
+        padding: 20px 6px 32px 6px;
+        border-radius: 0;
+      }
     }
 
     /* Bong bóng Edubot */
@@ -34,15 +53,10 @@
       user-select: none;
     }
 
-    /* #custom-edubot-bubble:hover {
-      background: #18459b;
-    } */
-
     .edubot-avatar {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      /* border: 1px solid #3071FF; */
     }
 
     #custom-edubot-bubble .edubot-icon {
@@ -62,7 +76,6 @@
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      /* transition: background 0.18s, color 0.18s; */
       margin: 0 auto;
       cursor: pointer;
     }
@@ -109,7 +122,6 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Nút đóng popup */
     #edubot-menu-close {
       position: absolute;
       top: 15px;
@@ -131,12 +143,141 @@
 </head>
 
 <body>
-  <img src="https://github.com/anhdenday/owllee/blob/main/LMS/LMS.png?raw=true" class="full-screen-image"
-    alt="LMS VinSchool Assistant">
+  <div class="main-container">
+    <!-- ==== GIAO DIỆN LMS GỐC BẮT ĐẦU ==== -->
+
+    <!-- Thanh menu điều hướng -->
+    <div style="display: flex; align-items: center; padding-bottom: 16px;">
+      <img src="https://github.com/anhdenday/owllee/blob/main/LMS/logo.jpg?raw=true"
+        alt="Vinschool Logo" style="height:54px; margin-right: 20px;">
+      <div style="flex:1;">
+        <a href="#" style="text-decoration:none; color:#222; font-weight:bold; font-size:20px; vertical-align: middle;">Home</a>
+        <a href="#" style="text-decoration:none; color:#3071FF; margin-left:34px;">Courses</a>
+        <a href="#" style="text-decoration:none; color:#3071FF; margin-left:34px;">Timetable</a>
+        <a href="#" style="text-decoration:none; color:#3071FF; margin-left:34px;">Inbox</a>
+      </div>
+      <div style="margin-left: auto; display: flex; align-items: center;">
+        <span style="color: #f44336; font-size:15px; margin-right:18px;"><b>80</b></span>
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" style="height:34px; border-radius: 50%;">
+      </div>
+    </div>
+
+    <!-- Tiêu đề -->
+    <div style="padding: 12px 0 24px 0;">
+      <b>Hello NGUYỄN CHÂU ANH!</b>
+    </div>
+
+    <!-- Menu chức năng -->
+    <div style="display: flex; gap: 30px; flex-wrap:wrap; margin-bottom:24px;">
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" style="height:54px;">
+        <div>Module</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/2618/2618557.png" style="height:54px;">
+        <div>Quiz</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/3588/3588737.png" style="height:54px;">
+        <div>Assignment</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/3595/3595455.png" style="height:54px;">
+        <div>Grade</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/3500/3500833.png" style="height:54px;">
+        <div>Discussion</div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/1828/1828919.png" style="height:54px;">
+        <div>Comment <span style="color:#f44336;">77</span></div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://cdn-icons-png.flaticon.com/128/2991/2991108.png" style="height:54px;">
+        <div>Report</div>
+      </div>
+    </div>
+
+    <!-- Todo -->
+    <div style="background: #f8f8f8; padding: 12px 20px; border-radius: 10px; margin-bottom: 16px;">
+      <b>Todo</b><br>
+      <span style="color:#888;">Don't have any assignment need to be done</span>
+    </div>
+
+    <!-- Bố cục 2 cột: courses | timetable -->
+    <div style="display: flex; gap: 32px;">
+      <!-- Courses -->
+      <div style="flex: 2;">
+        <div style="font-weight:bold; margin-bottom:8px;">Courses</div>
+        <!-- 1 course -->
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/2910/2910768.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">MATHS</div>
+            <div style="color:#888; font-size:13px;">Last access 7/23/2025 10:46:26 AM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/3013/3013912.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">NATURAL SCIENCE</div>
+            <div style="color:#888; font-size:13px;">Last access 7/22/2025 7:35:34 PM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">ESL</div>
+            <div style="color:#888; font-size:13px;">Last access 7/22/2025 4:15:56 PM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+        <div style="display:flex; align-items:center; background:#f5f8ff; border-radius:12px; margin-bottom: 16px; padding:18px 22px;">
+          <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" style="height:50px; margin-right:18px;">
+          <div>
+            <div style="font-weight: 500;">VIETNAMESE LANGUAGE</div>
+            <div style="color:#888; font-size:13px;">Last access 6/10/2025 4:19:39 PM</div>
+            <div style="color:#f44336; font-size:13px;">Completion Rate for N/A &nbsp; 0/0 (0% Teacher don't set it up)</div>
+          </div>
+          <div style="margin-left:auto; color:#f44336; font-size:14px;">Course detail</div>
+        </div>
+      </div>
+      <!-- Timetable -->
+      <div style="flex: 1; min-width:230px;">
+        <div style="background:#fff; border-radius:16px; box-shadow: 0 2px 8px #0001; padding:20px;">
+          <div style="display:flex; gap: 12px;">
+            <button style="flex:1; background:#6a4eea; color:#fff; border:none; border-radius:8px 8px 0 0; padding:6px 0;">Timetable</button>
+            <button style="flex:1; background:#f4ede9; color:#b49e92; border:none; border-radius:8px 8px 0 0; padding:6px 0;">Planned task</button>
+          </div>
+          <div style="padding: 18px 0 0 0;">
+            <b>July 2025</b>
+            <table style="width:100%; border-collapse:collapse; color:#222; text-align:center; margin-top: 10px;">
+              <tr style="color:#bbb;">
+                <td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td>
+              </tr>
+              <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+              <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+              <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+              <tr><td>20</td><td>21</td><td>22</td><td style="background:#eee; border-radius:50%; color:#6a4eea;">23</td><td>24</td><td>25</td><td>26</td></tr>
+              <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+            </table>
+            <div style="font-size:13px; color:#888; margin-top:12px;">7/23/2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==== GIAO DIỆN LMS GỐC KẾT THÚC ==== -->
+  </div>
 
   <!-- Bong bóng Edubot -->
   <div id="custom-edubot-bubble" onclick="toggleMenu()">
-    <!-- <span class="edubot-icon">🤖</span> Edubot -->
     <img src="https://agent.owllee.io/resources/files/agent/avatar/27b7db7e511847acb32b6b2b7b6bea43.jpeg"
       alt="Edubot Avatar" class="edubot-avatar" />
   </div>
@@ -237,7 +378,6 @@
         style.innerHTML = css;
         document.head.appendChild(style);
       }
-      // Ngoài ra, xóa node bubble cứng nếu có
       setTimeout(() => {
         document.querySelectorAll('.owlla-chatbot-bubble').forEach(el => el.remove());
       }, 500);
@@ -249,7 +389,6 @@
       removeOwllaBot();
       hideDefaultOwllaBubble();
 
-      // Tạo iframe mới với kích thước popup như cũ
       const iframe = document.createElement('iframe');
       iframe.src = `https://agent.owllee.io/chatbot-iframe/${botConfigs[type].id}`;
       iframe.width = "450px";
