@@ -1,0 +1,2765 @@
+a:hover {
+    text-decoration: none;
+}
+.ArticleDetailControl .voice-options {
+        /* display: none; */
+        position: absolute;
+        background: white;
+        width: 100%;
+        top: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+}
+.ArticleDetailControl .voice-option{
+        padding: 10px !important;
+        transition: 200ms;
+        cursor: pointer;
+        text-align: left;
+        font-weight: 400;
+        font-size: 15px;
+        font-family: Roboto;
+}
+.ArticleDetailControl .voice-option+.voice-option{
+        border-top: 1px solid #ECEFF1;
+}
+.ArticleDetailControl .voice-option:hover{
+        background: #fff3e0;
+}
+.ArticleDetailControl .bm-player .progress {
+        background: coral;
+        width: 0%;
+        height: 100%;
+        transition: 0.25s;
+        border-radius: 6px;
+}
+.ArticleDetailControl .bm-player .alltime {
+        position: absolute;
+        height: 5px;
+        top: 45%;
+        width: 100%;
+        background: #adadad;
+        border-radius: 6px;
+        /* box-shadow: 0 2px 10px 0 #0008; */
+}
+.ArticleDetailControl .bm-player .timeline {
+        position: relative;
+        cursor: pointer;
+        width: 65%;
+        margin: 0 auto;
+}
+.ArticleDetailControl .bm-player  {
+        position: relative;
+        transition: all .15s linear;
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        font-size: 0;
+        /* background-color: #f8f9fa; */
+        margin-top: 16px;
+        /* border: 1px solid #dee2e6; */
+        border-radius: 4px;
+}
+.ArticleDetailControl .bm-player  .left {
+        display: flex;
+        flex-grow: 1;
+}
+.ArticleDetailControl .bm-player  .play-button {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+}
+.ArticleDetailControl .bm-player  .play-button>span {
+        background-color: rgba(255,255,255,.9);
+        border: 1px solid rgba(0,0,0,.3);
+        display: block;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.ArticleDetailControl .bm-player  .play-button i {
+        font-size: 12px;
+        color: #495057;
+}
+.ArticleDetailControl .bm-player  .play-button:hover span {
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.4);
+}
+.ArticleDetailControl .bm-player  .play-button:hover i {
+        color: #212529;
+}
+.ArticleDetailControl .bm-player  .play-button+span {
+        display: flex;
+}
+.ArticleDetailControl .bm-player  .mute-wrap:hover .volume-slider {
+        width: 62px;
+        margin-right: 10px;
+}
+.ArticleDetailControl .bm-player .fi-volume-slash:before {
+        content: "\f2e2";
+}
+.ArticleDetailControl .bm-player .fi-pause:before {
+        content: "\f04c";
+}
+.ArticleDetailControl .bm-player .mute-wrap {
+        display: flex;
+}
+.ArticleDetailControl .bm-player  .mute-button {
+        padding: 0 16px 0 8px;
+        border: none;
+        background: #fff;
+}
+.ArticleDetailControl .bm-player  .mute-button i {
+        color: #495057;
+}
+.ArticleDetailControl .bm-player  .mute-button:hover i {
+        color: #212529;
+}
+.ArticleDetailControl .bm-player  .volume-slider {
+        width: 0;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        margin-right: 0;
+        cursor: pointer;
+        transition: all .15s linear;
+}
+.ArticleDetailControl .bm-player  .volume-slider .volume-slider-handle {
+        position: absolute;
+        top: 50%;
+        width: 12px;
+        height: 6px;
+        border-radius: 6px;
+        margin-top: -6px;
+        background-color: black;
+        z-index: 999;
+}
+.ArticleDetailControl .bm-player [class*=fa-]:before {
+        font-family: "Font Awesome 5 Pro";
+        font-style: normal;
+        font-weight: 300;
+        speak: never;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1.5em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+.ArticleDetailControl .bm-player  .volume-slider .volume-slider-handle:after, .ArticleDetailControl .bm-player  .volume-slider .volume-slider-handle:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 50%;
+        border-radius: 6px;
+        height: 6px;
+        margin-top: -3px;
+        width: 64px;
+}
+.ArticleDetailControl .bm-player  .volume-slider .volume-slider-handle:before {
+        left: -64px;
+        background-color: #adadad;
+        height: 6px;
+}
+.ArticleDetailControl .bm-player  .volume-slider .volume-slider-handle:after {
+        left: 12px;
+        background-color: rgba(0,0,0,.1);
+}
+.ArticleDetailControl .bm-player  .volume-slider.is-active {
+        margin-right: 10px;
+        width: 62px;
+}
+.ArticleDetailControl .bm-player  .time-display {
+        width: 75px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        color: #495057;
+        opacity: 1;
+        transition: all .2s linear;
+}
+.ArticleDetailControl .bm-player  .time-display .current {
+        width: 30px;
+}
+.ArticleDetailControl .bm-player  .time-display .separator {
+        margin-right: 3px;
+}
+.ArticleDetailControl .bm-player  .progress-bar {
+        position: relative;
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        transition: all .2s linear;
+}
+.ArticleDetailControl .bm-player  .progress-bar .bg {
+        position: absolute;
+        display: flex;
+        height: 0;
+        top: 0;
+        width: 100%;
+        transition: all .15s linear;
+        border-top: 1px solid rgba(0,0,0,.1);
+        border-top-width: 3px;
+}
+.ArticleDetailControl .bm-player  .progress-bar .fill-recent {
+        position: absolute;
+        display: flex;
+        height: 0;
+        top: 0;
+        left: 0;
+        border-top-width: 1px;
+        border-top-style: solid;
+        font-size: 0;
+        cursor: pointer;
+        transition: all .15s linear;
+        border-top-width: 3px;
+}
+.ArticleDetailControl .bm-player  .progress-bar .current_time {
+        position: absolute;
+        right: -7px;
+        top: -5px;
+        width: 7px;
+        height: 7px;
+        border-radius: 7px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-indent: -999em;
+        transition: all .15s linear;
+        background-color: #fff;
+        box-shadow: 0 0 4px rgba(0,0,0,.4);
+}
+.ArticleDetailControl .bm-player  .progress-bar:hover .bg,.ArticleDetailControl .bm-player  .progress-bar:hover .fill-recent {
+        border-top-width: 5px;
+        height: 10px;
+        padding-top: 15px;
+        cursor: pointer;
+}
+.ArticleDetailControl .bm-player  .progress-bar:hover .current_time {
+        display: flex;
+        top: -8px;
+        width: 12px;
+        height: 12px;
+}
+.ArticleDetailControl .bm-player  .right {
+        display: flex;
+        align-items: center;
+        position: relative;
+}
+.ArticleDetailControl .bm-player  .select-voice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,.1);
+        position: relative;
+}
+.ArticleDetailControl .bm-player  .select-voice span {
+        color: #495057;
+}
+.ArticleDetailControl .bm-player  .select-voice i {
+        color: #495057;
+}
+.ArticleDetailControl .bm-player  .select-voice::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .2125em;
+        vertical-align: .2125em;
+        content: "";
+        border-top: .25em solid;
+        border-right: .25em solid transparent;
+        border-bottom: 0;
+        border-left: .25em solid transparent;
+}
+.ArticleDetailControl .bm-player  .select-voice:empty::after {
+        margin-left: 0;
+}
+.ArticleDetailControl .bm-player  .select-voice:after {
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        opacity: .4;
+}
+.ArticleDetailControl .bm-player  .select-voice:hover {
+        border: 1px solid rgba(0,0,0,.3);
+}
+.ArticleDetailControl .bm-player  .voice-board {
+        width: 180px;
+        right: 0;
+        margin-top: 5px;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+.ArticleDetailControl .bm-player  .voice-board li {
+        height: 44px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        border-top: 1px solid #e9ecef;
+        cursor: pointer;
+}
+.ArticleDetailControl .bm-player  .voice-board li i {
+        margin-right: 10px;
+}
+.ArticleDetailControl .bm-player  .voice-board li:first-child {
+        border-top: none;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+}
+.ArticleDetailControl .bm-player  .voice-board li.is-active,.ArticleDetailControl .bm-player  .voice-board li:hover {
+        background-color: #ededed;
+}
+.ArticleDetailControl .bm-player  .voice-board li.is-active i,.ArticleDetailControl .bm-player  .voice-board li.is-active span,.ArticleDetailControl .bm-player  .voice-board li:hover i,.ArticleDetailControl .bm-player  .voice-board li:hover span {
+        color: #c31e40;
+}
+.ArticleDetailControl .bm-player  .play-button {
+        width: 60px;
+        height: 100%;
+        padding-left: 16px;
+        padding-right: 0;
+        font-size: 14px;
+        border: none;
+        background: #fff;
+}
+.ArticleDetailControl .bm-player  .play-button>span {
+        box-sizing: border-box;
+        width: 36px;
+        height: 36px;
+}
+.ArticleDetailControl .bm-player  .play-button .fi-play {
+        margin-left: 3px;
+}
+.ArticleDetailControl .bm-player  .time-display {
+        width: 80px;
+        font-family: Roboto;
+        padding-left: 5px;
+}
+.ArticleDetailControl .bm-player  .progress-bar {
+        background-color: #f8f9fa;
+        position: relative;
+        margin-left: 16px;
+        margin-right: 16px;
+        height: 100%;
+}
+.ArticleDetailControl .bm-player  .progress-bar .fill-recent {
+        border-color: #28a5fa;
+}
+.ArticleDetailControl .bm-player  .progress-bar .bg,.ArticleDetailControl .bm-player  .progress-bar .fill-recent {
+        top: 29px;
+}
+.ArticleDetailControl .bm-player  .progress-bar:hover .bg,.ArticleDetailControl .bm-player  .progress-bar:hover .fill-recent {
+        top: 28px;
+}
+.ArticleDetailControl .bm-player  .mute-button i {
+        font-size: 18px;
+}
+.ArticleDetailControl .bm-player  .right {
+        /* padding-right: 16px; */
+}
+.ArticleDetailControl .bm-player  .select-voice {
+        width: inherit;
+        height: 34px;
+        padding: 0 20px 0 13px;
+}
+.ArticleDetailControl .bm-player  .select-voice span {
+        font-size: 15px;
+        font-family: Roboto;
+}
+.ArticleDetailControl .bm-player  .select-voice i {
+        margin-right: 10px;
+        font-size: 16px;
+}
+.ArticleDetailControl .bm-player  .select-voice:after {
+        top: 14px;
+}
+.ArticleDetailControl .bm-player  .voice-board {
+        border-radius: 5px;
+        position: relative;
+        border: 1px solid #ddd;
+        padding: 0;
+        top: 5px!important;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        font-weight: 400;
+}
+[class*=fi-]:before {
+        font-family: "Font Awesome 5 Pro";
+        font-style: normal;
+        font-weight: 300;
+        speak: never;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1.5em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+.ArticleDetailControl .bm-player  .voice-board:after,.ArticleDetailControl .bm-player  .voice-board:before {
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+}
+.ArticleDetailControl .bm-player  .voice-board:after {
+        border-color: rgba(255,255,255,0);
+        border-bottom-color: #fff;
+        border-width: 5px;
+        margin-left: 1px;
+}
+.ArticleDetailControl .bm-player  .voice-board:before {
+        border-color: transparent;
+        border-bottom-color: #444;
+        border-width: 6px;
+        margin-right: -1px;
+}
+.ArticleDetailControl .bm-player  .voice-board:after,.ArticleDetailControl .bm-player  .voice-board:before {
+        right: 20px;
+}
+.ArticleDetailControl .bm-player  .voice-board.show {
+        display: block;
+}
+@media only screen and (max-width: 600px) {
+        .ArticleDetailControl .bm-player .timeline {
+                display: none;
+        }
+        .ArticleDetailControl .bm-player  .time-display {
+                margin: 20px;
+        }
+}
+/* ALL */
+body{
+        position: relative;
+}
+.yhy-append-wrap {
+        position: absolute !important;
+        bottom: 0;
+        z-index: 1;
+}
+* {
+        line-height: 1.3;
+}
+@media only screen and (min-width: 0px) {
+        .SingleTab .Wrap .first p {
+                color: #757575;
+                font-size: 13px;
+        }
+        .ArticleFeedbackControl .FeedbackForm {
+                width: 100%;
+                background: none;
+        }
+        .ArticleFeedbackControl table td input, .ArticleFeedbackControl table td textarea {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                padding: 5px !important;
+                min-height: 25px;
+                border: 1px solid silver;
+        }
+        .ArticleFeedbackControl {
+                width: 100% !important;
+                padding: 30px 5px 10px 5px !important;
+        }
+        .ArticleFeedbackControl .PanelButton {
+                text-align: center;
+        }
+        .ArticleFeedbackControl .PanelButton input[type='submit']{
+                border: none;
+                padding: 4px 20px;
+                background: #e4e4e4;
+                font-size: 13px;
+        }
+        .ArticleFeedbackControl .ColRight input.Verifier{
+                width: 100px !important;
+                margin-left: 5px;
+        }
+        .ArticleFeedbackControl table td.ColRight {
+                display: flex;
+                align-items: center;
+        }
+        .MainStructure .FooterBar {
+                overflow: hidden;
+        }
+        .SingleArticle {
+                padding: 10px;
+        }
+        .ArticleInMenu .ArticleCatName {
+                min-height: 27px;
+                padding: 0;
+                margin-bottom: 10px;
+                overflow: hidden;
+        }
+        .ServiceCategory ul{
+                height: auto;
+        }
+        .YoutubeVideoList .ListVideo > span{
+                float: none;
+        }
+        .WebLink .Content {
+                width: 100%;
+        }
+        .SingleSearch {
+                max-width: 300px;
+        }
+        .SingleTab {
+                height: auto;
+        }
+        .MultipleTabExt .Wrap .LeftCol .next li {
+                padding: 5px 0;
+        }
+        .HotnewsControl .HotnewsList {
+                padding: 5px;
+        }
+        .ArticleDetailControl .UISocialShare,
+        .ArticleInMenu .UISocialShare {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100% !important;
+                margin-bottom: 20px !important;
+                margin-top: 20px !important;
+                float: none;
+        }
+        .ArticleDetailControl .UISocialShare > div,
+        .ArticleInMenu .UISocialShare > div {
+                height: 20px;
+                margin: 0 !important;
+                float: none !important;
+        }
+        .ArticleDetailControl .UISocialShare > div.twitter,
+        .ArticleInMenu .UISocialShare > div.twitter {
+                margin-right: 10px !important;
+        }
+        .ArticleDetailControl .UISocialShare .facebook {
+                margin-bottom: 0px !important;
+        }
+        .ArticleInMenu .UISocialShare .facebook {
+                margin-bottom: 10px !important;
+        }
+        .SingleTab .Wrap .next {
+                margin-left: 10px;
+        }
+        .SingleTab .Wrap {
+                height: auto;
+        }
+        .UIArticleListContent {
+                height: auto;
+        }
+        .UIArticleListContent ul.ulArticle {
+                margin-left: 10px;
+        }
+        .ImageSlideShow .image-item {
+                width: 100% !important;
+        }
+        .SingleArticle table {
+                --table-layout: fixed;
+        }
+        .SingleArticle img {
+                max-width: 100% !important;
+        }
+        .UIBannerControl {
+                width: 100%;
+        }
+        .UIBannerControl img{
+                width: 100%;
+        }
+        span.ListPollItem {
+                display: flex;
+                margin: 5px 5px;
+                align-items: center;
+        }
+        @media only screen and (max-width: 768px){
+                td.LibraryItem{
+                        display: inline-flex;
+                }
+        }
+        span.ListPollItem *{
+                margin: 0;
+        }
+        .PollControl td.td-result {
+                display: flex;
+                justify-content: center;
+        }
+        .PollControl  td.td-result>a{
+                margin: 5px !important;
+                height: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+        .DetailControl .Content>table {
+                width: 100%;
+        }
+        .MultiFunctionControl marquee {
+                table-layout: fixed;
+                display: table;
+        }
+        @media only screen and (max-width: 768px){
+               .UIMultiFunction_Default .MultiFunctionControl marquee {
+                	display: table !important;
+        		}
+                .UIMultiFunction_Default .MultiFunctionControl marquee a {
+                	display: inline !important;
+        		}
+                .UIMultiFunction_Default .MultiFunctionControl marquee a img {
+                	display: inline !important;
+        		}
+        }
+        .MultipleTabDefault{
+                height: auto;
+        }
+        .HotnewsControl .HotnewsList .HotnewsItem{
+                padding: 5px 15px !important;
+        }
+        .NewSteeringControl .item ul {
+                list-style: none;
+                line-height: 1.4;
+                padding: 0px;
+                margin: 0;
+        }
+        .ListControl .List table th {
+                font-size: 14px;
+        }
+        .ListControl span{
+                font-size: 13px;
+        }
+        .ListControl  .view-count {
+                font-size: 13px;
+                color: #757575;
+        }
+        .ListControl .Search .ExTitle h1 {
+                font-size: 16px !important;
+                margin: 0;
+                padding: 0 10px;
+        }
+        .ListControl .Search .ExTitle {
+                display: block;
+                min-height: 26px;
+                margin-top: 10px;
+                height: auto;
+                padding: 0;
+        }
+        .MultipleTabDefault .Wrap .first .title {
+                font-size: 13px;
+        }
+        .QuestionSiteMenuControl .detail {
+                margin-left: 10px;
+        }
+        .RssTree>a {
+                display: none !important;
+        }
+        .UIListArticleOfSite > div:nth-child(2) {
+                height: auto !important;
+        }
+        .SingleSearch .SearchBox {
+                display: flex;
+                align-items: center;
+        }
+        .ServiceCategory ul li {
+                width: 100%;
+                margin-left: 5px;
+                padding-right: 5px;
+        }
+        .ServiceCategory ul li img{
+                display: none;
+        }
+        .UIProtalList .lvwContent .tb-content .tr-row .td-item img {
+                display: none;
+        }
+        .MultipleTabDefault .Wrap {
+                height: auto;
+        }
+        .ShortArticle marquee .block-row {
+                position: static !important;
+                display: flex;
+        }
+        .SliderFeature .LeftPanel>a {
+                color: transparent;
+        }
+        .ArticleInMenu .ArticleViewCount {
+                position: static !important;
+        }
+        .ArticleInMenu .ArticleCat {
+                padding: 5px 0;
+        }
+        .UIListArticleOfSite .lvwContent {
+                padding: 5px;
+        }
+        .MultipleTabDefault .Wrap .first p {
+                color: #757575;
+                /*display:none;*/
+        }
+        img{
+                max-width: 100%;
+        }
+        .ArticleInMenu .col-lg-10>p {
+                font-size: 13px;
+                color: #757575;
+                height: auto;
+                width: 100%;
+        }
+        .ServiceCategory .Content {
+                padding: 0 5px;
+        }
+        .OnlineCounter ul {
+                padding: 5px;
+                font-size: 13px;
+        }
+        .HSliderScroll .Header span.Pages {
+                display: none;
+        }
+        .page-link {
+                position: relative;
+                display: block;
+                padding: 5px;
+                margin-left: -1px;
+                line-height: 1.25;
+                color: #1567b3;
+                background-color: #fff;
+                border: 1px solid #dee2e6;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+        .page-item.active .page-link {
+                z-index: 3;
+                color: #fff;
+                background-color: #1567b3;
+                border-color: #1567b3;
+        }
+        .ArticleInMenu ul {
+                width: 100%;
+                padding: 5px;
+        }
+        .ArticleInMenu .col-lg-2 {
+                width: 110px;
+                height: 80px;
+                background: #e4e4e4;
+                padding: 0;
+                max-width: none;
+                flex: none;
+        }
+        .ArticleInMenu .col-lg-10 {
+                flex: 1;
+                padding-right: 5px;
+        }
+        .ArticleInMenu .Title {
+                width: 100%;
+        }
+        .ArticleInMenu .col-lg-2 img {
+                width: 100%;
+                height: 100%;
+                background: #e4e4e4;
+                padding: 1px;
+                margin: 0;
+        }
+        .ArticleInMenu li.row {
+                margin: 0;
+                display: flex;
+                border-bottom: 1px dotted #e4e4e4;
+                padding: 5px 0px;
+        }
+        .btn-left img {
+                padding: 5px;
+                background: aliceblue;
+                margin: 5px;
+        }
+        .btn-right img {
+                padding: 5px;
+                background: aliceblue;
+                margin: 5px;
+        }
+        .btn-center img {
+                padding: 5px;
+                background: aliceblue;
+                margin: 5px;
+        }
+        .DropdownMenu .navbar-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 40px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background: #2196F3;
+        }
+        .DropdownMenu .navbar-button span {
+                background: white;
+                width: 50%;
+                height: 4px;
+                margin: 2px;
+                border-radius: 1px;
+                transition: 300ms;
+        }
+        .DropdownMenu .navbar-button {
+                display: none;
+        }
+        .HotnewsControl .HotnewsScroll {
+                min-height: 300px;
+        }
+        .ArticleInMenu .pagination {
+                display: flex;
+                @include list-unstyled(): ;
+                @include border-radius(): ;
+                margin-top: 10px;
+                margin-bottom: 10px;
+        }
+        .ArticleInMenu .pagination li{
+                width: auto !important;
+                padding: 0;
+        }
+        li.LanguageMenu {
+                padding-left: 5px;
+                padding-right: 5px;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+        }
+        .DropdownMenu .navbar-button {
+                display: none;
+        }
+}
+/* WEB */
+@media only screen and (min-width: 769px) {
+        .DropdownMenu .MenuList {
+                display: block;
+        }
+        .LoginControl .LoginContainer .CapchaContainer .Capcha .ImgCapcha{
+                min-width: 100px
+        }
+}
+/* MOBILE */
+@media only screen and (max-width: 768px) {
+        .table-3-col td {
+                display: block;
+                width: 100% !important;
+        }
+        table#ctrl_121899_56_QuestionContent1_grvQuestionList tr:last-child table td{
+                display:unset;
+                width:auto;
+        }
+        .MainStructure .ContentBar{
+                padding: 0;
+        }
+        .MainStructure .LeftBar {
+                padding: 0;
+                /* padding-top: 30px !important; */
+                /* padding-bottom: 40px !important; */
+        }
+        .MainStructure .fixed {
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 10;
+                bottom: 0;
+                padding: 0px 0px !important;
+                overflow-y: scroll;
+                background: white;
+                /* margin-top: 30px !important; */
+                /* padding-bottom: 40px !important; */
+                height: 100vh !important;
+                width: 100vw !important;
+                box-shadow: 0 0 10px #444444;
+                padding-top: 5px !important;
+        }
+        .fixed-left {
+                left: 0;
+        }
+        .fixed-right {
+                right: 0;
+        }
+}
+@media only screen and (max-width: 768px) {
+        .MultiFunctionControl iframe {
+                min-height: 47vh;
+        }
+        .MultiFunctionControl style{
+                display: none !important;
+        }
+        #ctrl_248838_58_lsLibrary_ctrl0_itemPlaceholderContainer>td{
+                display:inline-block;
+                width:50%;
+        }
+        .WebLink .Content {
+                width: 100%;
+        }
+        .UIListArticleOfSite {
+                padding: 5px;
+        }
+        .UIListArticleOfSite > div:nth-child(2) {
+                height: auto;
+                padding: 0 5px;
+        }
+        .vanbanquypham .RadPicker {
+                width: 100% !important;
+                display: flex !important;
+        }
+        .vanbanquypham .RadPicker table.rcTable {
+                width: 100% !important;
+        }
+        .vanbanquypham .RadPicker table.rcTable>tbody>tr {
+                display: flex;
+                align-items: center;
+        }
+        .vanbanquypham .RadPicker table.rcTable>tbody>tr>td:nth-child(1){
+                flex-grow: 1;
+        }
+        .vanbanquypham .RadPicker table.rcTable>tbody>tr>td:nth-child(2){
+                width: 30px !important;
+        }
+        .UIArticleListContent .Wrap {
+                text-align: justify;
+        }
+        .VideoShowControl {
+                width: 100vw !important;
+                padding: 5px;
+        }
+        .UIArticleListContent .Wrap .third-box li {
+                margin-left: 10px;
+        }
+        .snv__front > em {
+                background-color: #126ead !important ;
+                padding: 20px !important;
+                width: 80px !important;
+                height: 80px !important;
+                color: #FFF !important;
+                text-align: center !important;
+                border-radius: 50% !important;
+                line-height: 40px !important;
+                margin-bottom: 10px !important;
+                font-size: 29px !important;
+                margin-top: 10px !important;
+        }
+        .SingleTab .Wrap .first {
+                display: inline-block;
+                width: 100%;
+        }
+        .snv__behind {
+                visibility: visible !important;
+                opacity: 1 !important;
+        }
+        .snv__desc {
+                color: #369 !important;
+        }
+        .MainStructure .TopBar > table:first-child{
+                height: auto !important;
+        }
+        .SliderFeature .LeftCol .text div {
+                text-align: justify;
+                padding: 0;
+        }
+        .SliderFeature .ArticleList li {
+                text-align: justify;
+                padding: 5px 0 !important;
+                margin: 5px 0 0 0;
+                background: none;
+        }
+        .SliderFeature .ArticleList li a{
+                height: auto !important;
+                padding: 0 5px;
+                display: inline-block;
+        }
+        .SliderFeature .ArticleList {
+                margin: 0;
+                width: 100%;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+        }
+        .MultipleTabDefault .Wrap .next li {
+                text-align: justify !important;
+                margin-left: 10px;
+        }
+        .MultipleTabDefault .Wrap .first .title a {
+                text-align: justify;
+        }
+        .MenuListofSite {
+                width: 100% !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: auto !important;
+        }
+        .VerticalMenuControl .MenuList li.top:last-child {
+                border-radius: 0;
+        }
+        .MenuListofSite ul.parent {
+                width: 100% !important;
+                align-items: center;
+                display: flex !important;
+                position: static !important;
+                height: auto !important;
+                flex-direction: column;
+        }
+        .MenuListofSite ul.parent li {
+                width: 100%!important;
+                margin: 0 !important;
+                padding: 5px !important;
+                background-size: 500% !important;
+                background-position: center !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+        }
+        .NewSteeringControl .ListItem .item {
+                width: 100%;
+        }
+        .VerticalMenuControl {
+                padding: 5px !important;
+                margin: 0;
+                width: 100vw;
+                background: transparent;
+        }
+        .VerticalMenuControl .Menulist{
+                padding: 5px;
+                background: white;
+        }
+        .UIContactUs input[type="text"], .UIContactUs textarea {
+                padding: 3px 0;
+                border: 1px solid silver;
+                border-radius: 5px;
+                box-sizing: border-box;
+                width: 100% !important;
+        }
+        .YoutubeVideoTab ul.VideoList li {
+                width: 100%;
+        }
+        .YoutubeVideoTab ul.VideoList li .Image {
+                width: 100% !important;
+        }
+        .UIContactUs .FormContact{
+                width: 100% ;
+        }
+        .QuestionList .DetailQuestion .Title .header {
+                height: auto;
+                font-weight: bold;
+                padding: 5px 10px 5px 40px;
+                margin-bottom: 5px;
+        }
+        .WebLink {
+                padding: 5px;
+                margin: 0;
+        }
+        .OnlineCounter {
+                padding: 5px;
+                margin: 0;
+        }
+        .LoginControl {
+                padding: 5px;
+                margin: 0px;
+        }
+        .QuestionList .DetailQuestion .Title .back{
+                margin: 0px !important;
+                padding-left: 40px;
+        }
+        .QuestionList .DetailQuestion .Content .blockTitle .divFirst{
+                padding: 5px 10px 5px 40px;
+                height: auto !important;
+        }
+        .UIDanhSachGopY .Title {
+                padding-left: 10px;
+                background-position: 10px;
+        }
+        .UIArticleListContent {
+                margin: 0;
+                padding: 5px;
+                border: none;
+                width: 100vw;
+                height: auto;
+        }
+        .YoutubeVideoTab {
+                padding: 5px;
+                width: 100vw;
+        }
+        .UIProtalList {
+                padding: 5px;
+        }
+        table.DanhSachVanBan{
+                margin-top: 10px !important;
+        }
+        table.DanhSachVanBan>tbody>tr:nth-child(5)>td>div>table>tbody>tr:last-child td{
+                /* display: table-cell !important; */
+                display: block !important;
+        }
+        table.DanhSachVanBan>tbody>tr:nth-child(5)>td>div>table>tbody>tr:last-child table{
+                margin: auto;
+        }
+        .SingleArticle * {
+                line-height: 1.5;
+                text-align: justify;
+        }
+        .SingleArticle iframe{
+                margin: 0 !important;
+                width: 100%
+        }
+        .UIDanhSachVanBan .DanhSachVanBan .search{
+                display: flex;
+                align-items: center;
+        }
+        .UIDanhSachVanBan .DanhSachVanBan .search input{
+                margin: 5px !important;
+                height: 25px !important;
+        }
+        .UIDanhSachVanBan .DanhSachVanBan table.ChildGrid{
+                margin: 10px 0 !important;
+                width: 100%;
+        }
+        table.DanhSachVanBan input[type="text"], table.DanhSachVanBan select {
+                width: 100% !important;
+                padding: 3px 0;
+                border: 1px solid silver;
+                border-radius: 5px;
+        }
+        table.DanhSachVanBan .title{
+                padding: 10px !important;
+                height: auto !important;
+                background-position: 10px center !important;
+                background-size: 30px 30px !important;
+        }
+        table.DanhSachVanBan .title span{
+                margin: 0 !important;
+        }
+        table.DanhSachVanBan td, table.DanhSachVanBan th {
+                border: none !important;
+                padding: 5px !important;
+                font-size: 13px;
+        }
+        table.DanhSachVanBan th {
+                display: none;
+        }
+        table.DanhSachVanBan table{
+                border: none !important;
+        }
+        table.DanhSachVanBan>tbody>tr:nth-child(5)>td>div>table>tbody>tr{
+                border-bottom: 1px dotted silver;
+        }
+        table.DanhSachVanBan>tbody>tr:nth-child(5)>td>div>table>tbody>tr>td:nth-child(1)[align="center"]{
+                display: none !important;
+        }
+        table.DanhSachVanBan>tbody>tr:nth-child(5)>td>div>table>tbody>tr>td:nth-child(4),
+        table.DanhSachVanBan>tbody>tr:nth-child(5)>td>div>table>tbody>tr>td:nth-child(5){
+                float: gvPager;
+                display: inline-block;
+                width: auto !important;
+                padding: 5px !important;
+                vertical-align: top;
+        }
+        table.DanhSachVanBan>tbody>tr:nth-child(5)>td>div>table>tbody>tr>td:nth-child(4)>div{
+                display: flex!important;
+        }
+        .QuestionLaoCai table td input[type="text"], .QuestionLaoCai table td select {
+                width: 100% !important;
+                padding: 1px 0;
+                border: 1px solid silver;
+                border-radius: 5px;
+                min-width: 100px;
+                min-height: 25px;
+        }
+        .QuestionLaoCai .td-Header,
+        .QuestionLaoCai .td-Address,
+        .QuestionLaoCai .td-Phone,
+        .QuestionLaoCai .td-Email,
+        .QuestionLaoCai .td-Title,
+        .QuestionLaoCai .td-Content{
+                padding: 10px 5px;
+                font-size: 13px !important;
+        }
+        .QuestionLaoCai table td input[type='file']{
+                border: none !important;
+        }
+        .QuestionList td, .QuestionList th {
+                border: none !important;
+                padding: 5px !important;
+                font-size: 13px;
+        }
+        .QuestionList th {
+                display: none;
+        }
+        .QuestionList table{
+                border: none !important;
+        }
+        .QuestionList tr{
+                border-bottom: 1px dotted silver;
+        }
+        .QuestionList td:nth-child(1){
+                display: none;
+        }
+        .QuestionLaoCai .RadEditor {
+                height: auto !important;
+                overflow: auto !important;
+        }
+        .ArticleDetailControl{
+                padding: 5px !important;
+                width: 100vw;
+                box-sizing: border-box !important;
+        }
+        .SimilarArticleControl ul.ArticleList{
+                margin-left: 10px !important;
+                margin-top: 10px !important;
+                width: 100vw;
+                height: auto;
+        }
+        .SimilarArticleControl .ArticleTitle{
+                padding: 5px;
+                text-align: justify !important;
+        }
+        .MultiFunctionControl style, .AdvertContent style{
+                display: none !important;
+        }
+        .MainStructure {
+                /* padding-top: 30px !important; */
+                /* padding-bottom: 20px !important; */
+        }
+        .MainStructure .FooterBanner {
+                display: flex;
+                flex-direction: column;
+                height: auto !important;
+                width: auto !important;
+                text-align: center !important;
+                justify-content: center;
+                align-items: center;
+                min-width: 30px !important;
+                margin: 3px 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+                border-right: 0 !important;
+                border-left: 0 !important;
+                position: static;
+                line-height: 1.5;
+        }
+        .MultiFunctionControl *:not(.marquee, .widget-template, .widget-template *), .AdvertContent *, .UIFooterControl * {
+                display: flex !important;
+                flex-direction: column !important;
+                height: auto !important;
+                max-width: 100%;
+                justify-content: center;
+                align-items: center;
+                margin: 1px 0 !important;
+                padding: 0 !important;
+                position: static;
+                width: 100% !important;
+                max-width: 100% !important;
+                line-height: 1.5;
+                text-align: center;
+        }
+        .MainStructure .FooterBar{
+                /* z-index: 0; */
+        }
+        .MultiFunctionControl br, .AdvertContent br, .FooterBanner br {
+                height: 0px !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                display: none !important;
+        }
+        .MultiFunctionControl img, 
+        .AdvertContent img, 
+        .FooterBanner img,
+        .MultiFunctionControl .fa, 
+        .AdvertContent .fa, 
+        .FooterBanner .fa{
+                /* width: auto !important; */
+                max-width: 100% !important;
+                min-width: 30px !important;
+                min-height: 28px;
+                line-height: 1.5;
+        }
+        .box-category .box-category-top .box-category-title .avt-icon img{
+                max-width: 30px !important;
+                min-width: unset !important;
+                min-height: unset !important;
+        }
+        .box-category .box-category-middle .box-category-item .box-category-content .box-category-download,
+        .box-category .box-category-middle .box-category-item .box-category-content .box-category-download .type img{
+                display: none !important;
+        }
+        .box-category .box-category-middle .box-category-item .box-category-link-title{
+                max-height: unset !important;
+        }
+        .box-category .box-category-middle .box-category-item .box-category-zone .svb:before{
+                display: none !important;
+        }
+        .box-category .box-category-middle .box-category-item .box-category-zone .datetimevb{
+                display: none !important;
+        }
+        .box-category .box-category-middle, .box-category .box-category-middle *{
+                justify-content: flex-start;
+                align-items: flex-start !important;
+                text-align: left !important;
+        }
+        .box-category .box-category-middle .box-category-item{
+                padding: 10px !important;
+        }
+        .box-category .box-category-top .box-category-title{
+                flex-direction: row !important;
+                justify-content: flex-start;
+                padding: 5px 10px !important;
+                !impor;
+                !impỏ;
+                !i;
+                !;
+                !;
+                !impor;
+                !impỏ;
+                !i;
+                !;
+        }
+        .box-category .box-category-top .box-category-title .avt-icon{
+                width: auto !important;
+        }
+        .FooterBanner .social{
+                display: flex !important;
+                flex-direction: row !important;
+        }
+        .FooterBanner .social li{
+                display: inline-block !important;
+                width: auto !important;
+                margin: 5px !important;
+        }
+        .thongke_wrapper * {
+                flex-grow: 1;
+        }
+        .thongke_wrapper > div {
+                margin-bottom: 5px !important;
+        }
+        .thongke_wrapper .thongke_bieudo {
+                width: 80px !important;
+                height: 80px !important;
+        }
+        .YoutubeVideoTab ul.Tabs {
+                height: auto !important;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+        }
+        .YoutubeVideoTab ul.VideoList {
+                list-style: outside none none !important;
+                padding: 0px !important;
+                width: 100% !important;
+                display: grid !important;
+                grid-template-columns: calc(50% - (25px * 1/4)) calc(50% - (25px * 1/4)) !important;
+                grid-column-gap: 10px !important;
+        }
+        .TopBar, .TopBanner {
+                overflow-y: auto !important;
+                position: static !important;
+                width: 100% !important;
+                height: auto !important;
+                margin: 0 !important;
+        }
+        .ShortArticle {
+                margin: 0px;
+                width: 100vw !important;
+                height: auto;
+                min-height: 25px;
+        }
+        .SliderFeature .Header {
+                position: static;
+                /* padding: 5px; */
+        }
+        .SliderFeature .LeftCol .text {
+                display: none;
+        }
+        .SliderFeature .Header .lblHeader {
+                background-size: 75%;
+        }
+        .SliderFeature .LeftCol{
+                padding: 0 !important;
+                margin-bottom: 0px;
+        }
+        .SliderFeature .RightCol{
+                padding: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+        }
+        .MenuList>li:nth-child(1)>a>img{
+                margin: 0 !important;
+                padding: 0 !important;
+                display: none;
+        }
+        .MenuList>li:nth-child(1)>a>span{
+                display: inline-block;
+        }
+        .MenuList>li>a{
+                display: block;
+                line-height: 1.5 !important;
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
+        }
+        .DropdownMenu * {
+                text-align: left;
+                line-height: 1.4 !important;
+                white-space: normal !important;
+        }
+        .DropdownMenu {
+                position: fixed !important;
+                top: 0;
+                right: 0;
+                z-index: 10001;
+                height: 0%;
+                width: 100%!important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0;
+                background: transparent;
+        }
+        .DropdownMenu .MenuList {
+                display: none;
+                background: white;
+                margin-top: 0px !important;
+                height: calc(100vh - 0px) !important;
+                width: calc(100vw - 40px) !important;
+                overflow: hidden;
+                overflow-y: auto;
+                padding: 5px !important;
+                margin-left: 0 !important;
+                box-shadow: 0 0 10px #444444;
+        }
+        .DropdownMenu .MenuList li {
+                display: block !important;
+                float: none !important;
+                border: none !important;
+                padding: 8px 10px !important;
+        }
+        .DropdownMenu .navbar-button {
+                display: flex !important;
+                background: #2196F3;
+        }
+        .DropdownMenu .Dropdown {
+                display: block !important;
+                position: static !important;
+        }
+        .DropdownMenu .TopMenu, .DropdownMenu .TopMenuActive {
+                height: auto !important;
+        }
+        .DropdownMenu ul.Dropdown, .DropdownMenu ul.Popup {
+                background: white !important;
+                box-shadow: none !important;
+                height: auto !important;
+                display: block !important;
+                position: static !important;
+                margin: 0 !important;
+                width: 100% !important;
+        }
+        .DropdownMenu ul.Dropdown .sub, .DropdownMenu ul.Popup .sub {
+                display: block !important;
+                width: auto !important;
+                height: auto !important
+        }
+        .DropdownMenu li.TopMenu, .DropdownMenu li.TopMenuActive {
+                padding: 5px !important;
+                height: auto !important;
+                margin: 0 !important;
+                min-width: 100% !important;
+        }
+        .DropdownMenu li.TopMenu>a, .DropdownMenu li.TopMenuActive>a {
+                padding: 2px !important;
+                height: auto !important;
+                color: black !important;
+                line-height: 1.4 !important;
+        }
+        .DropdownMenu li.TopMenuActive>a{
+                color: white !important;
+                padding: 2px !important;
+        }
+        .DropdownMenu ul.Popup {
+                display: block !important;
+                width: 100% !important;
+        }
+        .DropdownMenu ul.Popup .sub a {
+                padding: 0 20px !important;
+        }
+        .DropdownMenu .MenuList .TopMenu:hover {
+                background: #fff !important;
+        }
+        .DropdownMenu .MenuList .Dropdown .sub:hover a {
+                color: #444444 !important;
+        }
+        .DropdownMenu .MenuList .Dropdown .sub:hover {
+                background: #fff none repeat-x scroll left top !important;
+                color: #444444 !important;
+                cursor: pointer;
+        }
+        .DropdownMenu .MenuList .Popup .sub:hover a {
+                color: #444444 !important;
+        }
+        .ArticleInMenu {
+                padding: 5px !important;
+                max-width: 100vw;
+                overflow: auto;
+        }
+        .ServiceCategory .Title {
+                width: 100% !important;
+                height: auto !important;
+        }
+        .nam_banner_vb a .khung {
+                width: 100% !important;
+                border: none !important;
+                margin: 0 !important;
+        }
+        .nam_banner_vb a {
+                width: 100% !important;
+        }
+        .nam_banner_vb a .text {
+                width: 100% !important;
+                padding: 5px 0 !important;
+                border: none;
+                margin: 0 !important;
+                text-align: center;
+        }
+        tr.rcbReadOnly {
+                display: flex !important;
+                width: 100%;
+                align-items: center !important;
+        }
+        tr.rcbReadOnly>td:nth-child(1) {
+                flex-grow: 1;
+                height: auto !important;
+                padding-bottom: 3px !important;
+        }
+        tr.rcbReadOnly>td:nth-child(2) {
+                width: 18px !important;
+        }
+        .MultiFunctionControl .SingleTab * {
+                width: 100% !important;
+        }
+        .HSliderScroll {
+                height: auto !important;
+        }
+        .HSliderScroll .ItemPanel ul.ItemContainer {
+                padding: 5px 0 !important;
+                width: 100% !important;
+                display: flex;
+                flex-wrap: wrap;
+        }
+        .HSliderScroll .ItemPanel ul.ItemContainer .Item {
+                width: calc(50% - 10px) !important;
+                margin: 5px !important;
+        }
+        .TabArticleControl {
+                padding: 5px !important;
+        }
+        .TabArticleControl .Container {
+                /* column-count: 2; */
+                padding: 5px !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-wrap: wrap;
+        }
+        .TabArticleControl .Container .Item {
+                width: 100% !important;
+        }
+        .TabArticleControl .Container .Item a{
+                display: flex;
+        }
+        .TabArticleControl .Container .Item a img{
+                width: 100px !important;
+                height: 70px !important;
+                margin-right: 10px
+        }
+        .UIContactUs {
+                padding: 5px !important;
+                padding-top: 10px !important;
+        }
+        .UIContactUs .FormBody label, .UIContactUs .FormBody .col-sm-10 {
+                padding: 5px !important;
+                margin: 0 !important;
+        }
+        .UIContactUs .form-group {
+                margin-bottom: 5px !important;
+        }
+        .addressbook {
+                display: flex;
+                flex-direction: column;
+                padding: 5px !important;
+                width: 100vw;
+        }
+        .addressbook .left{
+                width: 100% !important;
+                padding: 0;
+                margin: 0;
+        }
+        .addressbook .left .RadTreeView, .addressbook .right {
+                width: 100% !important;
+        }
+        .addressbook .right .department-info .row table tr > td:nth-child(2) .name{
+                padding: 0 !important;
+                color: red
+        }
+        .addressbook .left ul {
+                margin: 0 !important;
+                padding: 0 !important;
+        }
+        .addressbook .department-name {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                text-align: center !important;
+                padding: 10px !important;
+        }
+        .addressbook .right .contact-viewer-header-row td {
+                display: none !important;
+        }
+        .addressbook .right tr {
+                border-bottom: 1px solid #e5e5e5;
+        }
+        .addressbook .right td {
+                border: none !important;
+                text-align: left !important;
+        }
+        .addressbook .right td:nth-child(1) {
+                display: none;
+        }
+        .addressbook .right .row {
+                padding: 0 !important;
+                margin: 0 !important;
+        }
+        .VideoPanel {
+                width: 100% !important;
+                height: auto;
+        }
+        .SingleSearch {
+                /* position: fixed !important; */
+                /* top: 3px !important; */
+                /* right: 0 !important; */
+                /* z-index: 99999; */
+                min-height: 20px !important;
+                width: 100vw;
+                padding: 5px;
+                margin: 0 !important;
+                position: static !important;
+                max-width: 100%;
+        }
+        .SingleSearch .SearchBox {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                right: 5px;
+                top: 1px;
+                width: 100%;
+                position: static;
+                height: auto !important;
+                border: 1px solid silver;
+                border-radius: 3px;
+        }
+        .SingleSearch .SearchBox .Text {
+                height: 25px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                flex-grow: 1;
+                width: auto !important;
+                border: none;
+        }
+        .SingleSearch .SearchBox .Button {
+                margin-right: 0px !important;
+                margin-left: 5px !important;
+                border-radius: 3px !important;
+                width: 25px !important;
+                height: 25px !important;
+        }
+        .SimilarArticleControl {
+                padding: 5px !important;
+                margin: 0 !important;
+                width: 100vw;
+        }
+        .ArticleInMenu li img {
+                width: 100% !important;
+                height: 100% !important;
+        }
+        .ArticleInMenu .col-lg-10 {
+                padding: 0;
+                flex: 1;
+        }
+        .ArticleInMenu .col-lg-2 {
+                /* width: auto; */
+                /* height: 80px; */
+                padding: 0 !important;
+                margin-right: 10px;
+        }
+        .ArticleInMenu .Ngaydang {
+                font-size: 11px !important;
+        }
+        .ArticleInMenu span.cssView {
+                font-size: 11px !important;
+        }
+        .UIClockSystem .clock {
+                margin: 0 !important;
+                font-size: 11px !important;
+                position: static !important;
+                padding: 5px;
+                color: #444444;
+                z-index: 0;
+        }
+        .Wrap .first .image {
+                height: 48px !important;
+                width: 66px !important;
+        }
+        .SingleTab {
+                overflow: hidden;
+        }
+        .ArticleDetailControl .ArticleContent img {
+                width: 100% !important;
+                max-width: 100vw !important;
+                height: auto !important;
+                margin: 10px 0 !important;
+        }
+        .UIProtalList .ul-tab {
+                height: auto !important;
+                display: flex;
+                flex-wrap: wrap;
+        }
+        .MultiFunctionControl {
+                padding: 5px;
+                width: 100vw;
+        }
+        div.MultiFunctionControl style, div.MultiFunctionControl title{
+                display: none !important;
+        }
+        .AdvertisementBottomRight {
+                padding: 0 5px;
+        }
+        .ArticleSlider {
+                margin-bottom: 0;
+                padding: 5px !important;
+                width: 100vw;
+        }
+        .SliderFeature{
+                margin: 0 !important;
+                padding: 5px;
+        }
+        .TabArticleControl {
+                padding: 5px;
+                width: 100vw;
+        }
+        .SingleTab {
+                margin: 0;
+        }
+        .ImageSlideShow {
+                padding: 5px;
+                width: 100vw;
+                margin: 0 !important;
+        }
+        .ImageSlideShow .SlideShowItem {
+                width: 100%;
+                height: auto;
+        }
+        .ImageSlideShow .image-item{
+                width: 100% !important;
+                height: auto;
+        }
+        .MainContent{
+                min-height: auto !important;
+                padding: 0 !important;
+        }
+        .HSliderScroll {
+                margin: 0;
+                width: 100%;
+        }
+        .HSliderScroll .ItemPanel{
+                width: 100% !important;
+        }
+        .ArticleDetailControl * {
+                max-width: 100vw;
+                line-height: 1.4 !important;
+                box-sizing: border-box !important;
+                padding: 0 !important;
+                text-indent: 0 !important;
+                table-layout: fixed;
+        }
+        .ArticleDetailControl .UISocialShare .facebook,
+        .ArticleInMenu .UISocialShare .facebook {
+                margin-bottom: 4px !important;
+        }
+        .UISocialShare {
+        }
+        .ArticleDetailControl td{
+                display: table-cell !important;
+                width: auto !important;
+                overflow:auto;
+        }
+        .SingleArticle td{
+                display: table-cell !important;
+                width: auto !important;
+        }
+        .ArticleContent, .ArticleSummary{
+                text-align: justify !important;
+                overflow: auto;
+        }
+        .ArticleContent iframe, .ArticleSummary iframe{
+                width: 100% !important;
+                margin: 0 !important;
+        }
+        .ArticleDetailControl .tool .print {
+                width: 30px;
+        }
+        .QuestionList {
+                padding: 5px;
+        }
+        .QuestionLaoCai>table>tbody>tr:nth-child(3) {
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                font-size: 13px;
+        }
+        .AdvertisementCenter {
+                padding: 5px;
+                width: 100vw;
+        }
+        .UIClockSystem {
+                padding: 5px;
+                position: static;
+                display: flex;
+                margin: 0 !important;
+                align-items: center;
+                height: 30px;
+                margin-top: 5px !important;
+                width: 100%;
+        }
+        .HotnewsControl {
+                padding: 5px !important;
+                margin: 0;
+                width: 100vw !important;
+        }
+        .ServiceCategory {
+                padding: 5px;
+        }
+        .UIFooterControl{
+                padding: 5px !important;
+                width: 100vw !important;
+        }
+        .list_menu_footer li{
+                border: none !important;
+        }
+        .YoutubePlayer, .YoutubeVideoList {
+                padding: 5px;
+                margin: 0;
+                width: 100vw;
+        }
+        .YoutubePlayer .VideoContain{
+                width: 100%;
+        }
+        .UIMultiFunction_btn .MultiFunctionControl .Header {
+                height: 30px !important;
+        }
+        #footer .logo_footer {
+                width: auto !important;
+        }
+        .nam_banner_vb .khung img {
+                width: auto !important;
+        }
+        .dichvu .panel-body .row .list a img {
+                width: auto !important;
+        }
+        .YoutubePlayer iframe {
+                width: 100% !important;
+                height: 230px !important;
+        }
+        .ListControl .Search .ExTitle h1 {
+                font-size: 16px;
+                padding-top: 5px;
+                font-weight: bold;
+        }
+        .ListControl .List table th {
+                display: none;
+        }
+        .ListControl .List table td {
+                border: none;
+                text-align: left !important;
+                padding: 5px 0 !important;
+                text-align: justify !important;
+                font-size: 13px;
+                margin-right: 5px;
+        }
+        .ListControl .List table td a{
+                font-weight: bold;
+                margin-right: 5px;
+        }
+        .ListControl .List table {
+                border: none;
+        }
+        .ListControl .List tr {
+                border-bottom: 1px dotted silver;
+        }
+        .ListControl .List tr:last-child>td[colspan="4"]>table>tbody>tr {
+                display: inline-flex;
+                align-items: center;
+                border-bottom: none;
+        }
+        .DetailControl td {
+                display: block !important;
+                height: auto !important;
+                min-height: 30px;
+        }
+        .DetailControl {
+                padding: 5px;
+                margin: 0;
+        }
+        .DetailControl .Content td {
+                border-right: none;
+                line-height: 1.5;
+                text-align: justify;
+                border-bottom: 1px dotted silver;
+                padding: 5px 0;
+                margin: 0 !important;
+        }
+        .DetailControl .Content table{
+                width: 100%;
+        }
+        .AskQuestion {
+                padding: 5px;
+                margin: 0;
+        }
+        .AskQuestion input[type="text"], .AskQuestion select {
+                width: 100% !important;
+                padding: 3px 0;
+                border: 1px solid silver;
+                border-radius: 5px;
+        }
+        .QuestionControl, .QuestionControl .col-lg-6{
+                padding: 5px;
+                margin: 0;
+        }
+        .QuestionControl input[type="text"], .QuestionControl select {
+                width: 100% !important;
+                padding: 3px 0;
+                border: 1px solid silver;
+                border-radius: 5px;
+        }
+        .ListControl .col-md-3, .ListControl .col-md-9 {
+                padding: 5px 0 !important;
+                max-width: 100%;
+        }
+        .ListControl .mb-2{
+                margin: 0 !important;
+        }
+        .ListControl input[type="text"], .ListControl select {
+                width: 100% !important;
+                padding: 3px 0;
+                border: 1px solid silver;
+                border-radius: 5px;
+        }
+        .ListControl input.Search, input.Cancel{
+                margin-top: 10px !important;
+        }
+        .MultipleTabDefault {
+                margin: 0;
+                width: 100%;
+                overflow: auto;
+        }
+        .UIImageSlideShow {
+                padding: 5px;
+        }
+        .UIContactUs .SubmitForm .btnSubmit {
+                margin: 0;
+        }
+        .UIContactUs .SubmitForm{
+                margin-top: 10px;
+                text-align: center;
+        }
+        .MenuListofSite ul.parent li a.expan {
+                width: 15px !important;
+                height: 15px !important;
+                display: inline-block !important;
+                background: red;
+        }
+        .MenuListofSite ul.parent li a {
+                width: 100% !important;
+                padding: 0 !important;
+                text-align: left;
+                height: 100% !important;
+                line-height: 1.4 !important;
+        }
+        .MenuListofSite ul.parent li ul {
+                width: 100vw;
+                height: 100% !important;
+                padding: 0 !important;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 9999;
+        }
+        .MultipleTabDefault .Wrap {
+                padding: 5px;
+                /* overflow: auto; */
+                display: block;
+                width: 100%;
+        }
+        .MultipleTabDefault .Wrap .next {
+                margin: 0;
+                width: 100%;
+                height: auto;
+        }
+        .MultipleTabDefault .Wrap .first {
+                width: 100%;
+                margin: 0;
+        }
+        .UIBannerControl{
+                position: static !important;
+                width: 100vw;
+        }
+        .UIBannerControl img {
+                width: 100% !important;
+                height: auto !important;
+                padding: 0 !important;
+        }
+        .ArticleDetailControl .ArticleHeader {
+                text-align: justify;
+                margin-bottom: 10px;
+                width: 100%;
+        }
+        .ArticleDetailControl .tool {
+                height: auto !important;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+        }
+        .ListControl {
+                padding-top: 10px;
+        }
+        .phu {
+                height: 30px !important;
+        }
+        .DropdownMenu .MenuList .Dropdown .sub a span {
+                height: auto !important;
+        }
+        .NewSteeringControl {
+                padding: 5px;
+                height: auto !important;
+        }
+        .ImageCategory {
+                padding: 5px;
+                width: 100vw;
+        }
+        .MultipleTabExt .Wrap .LeftCol {
+                padding: 0px 10px;
+                text-align: justify;
+        }
+        .MultipleTabExt .Wrap .RightCol {
+                padding: 0px 10px;
+                text-align: justify;
+        }
+        .MultipleTabExt .Wrap .LeftCol .next {
+                margin: 0;
+                text-align: justify;
+                list-style: none;
+        }
+        .MultipleTabExt .Wrap .RightCol ul {
+                margin: 0;
+                text-align: justify;
+                list-style: none;
+        }
+        .ArticleInMenu .Title {
+                text-align: justify;
+                padding: 0;
+                background: none;
+                font-size: 13px;
+        }
+        .ArticleInMenu .ArticleCatName {
+                margin: 0;
+        }
+        .thongke1 {
+                padding: 5px !important;
+        }
+        .ArticleInMenu .ArticleOfCat li {
+                overflow: hidden;
+                text-align: justify;
+        }
+        .ArticleInMenu li {
+                overflow: hidden;
+                text-align: justify;
+        }
+        .DropdownMenu .MenuList .TopMenu .HasChildren, .TopMenuActive .HasChildren {
+                height: auto !important;
+        }
+        .DropdownMenu .MenuList .Popup .sub a span {
+                display: inline-block !important;
+        }
+        .SingleTab .Wrap .first .title {
+                text-align: justify;
+        }
+        .SingleTab .Wrap {
+                padding: 5px;
+        }
+        .SingleTab .Wrap .next li a {
+                text-align: justify;
+        }
+        .SingleTab .Wrap .next li {
+                text-align: justify;
+                margin-left: 10px;
+        }
+        .MultipleTabDefault .Wrap .first .title {
+                text-align: justify;
+        }
+        .calendar-container td {
+                display: table-cell !important;
+                width: auto !important;
+        }
+        .SearchResults input[type='text'], select {
+                width: 100%;
+                border: 1px solid silver;
+                margin: 0 !important;
+                border-radius: 5px;
+        }
+        .SearchResults {
+                padding: 5px !important;
+                text-align: justify;
+        }
+        .SearchResults table {
+                width: 100% !important;
+        }
+        .SearchResults table td {
+                padding: 5px;
+                display: flex;
+                width: 100% !important;
+        }
+        .SearchResults table td div {
+                width: 100%;
+                margin: 0 !important;
+        }
+        .SearchResults .ResultList .Item .Image {
+                width: 80px !important;
+                height: 60px !important;
+        }
+        .SearchResults .BeginDate>div {
+                width: 100% !important;
+        }
+        .SearchResults .BeginDate>div>table>tbody>tr {
+                display: flex;
+        }
+        .DropdownMenu .MenuList .Dropdown .sub a {
+                height: auto !important;
+                padding: 0 5px;
+        }
+        .SearchResults .EndDate>div {
+                width: 100% !important;
+        }
+        .SearchResults .EndDate>div>table>tbody>tr {
+                display: flex;
+        }
+        .SearchResults .BeginDate>div>table>tbody>tr >td:nth-child(2){
+                width: 30px !important;
+        }
+        .SearchResults .EndDate>div>table>tbody>tr >td:nth-child(2){
+                width: 30px !important;
+        }
+        .SearchResults .SearchPane .SearchButton {
+                width: 100%;
+                padding: 3px !important;
+                line-height: 1.5 !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+        .vanbanquypham {
+                padding: 0px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+        }
+        .vanbanquypham .Search .ExTitle > span {
+                color: #b80002;
+                display: inline-block;
+                font: bold 12px Arial;
+                text-transform: uppercase;
+                white-space: nowrap;
+        }
+        .vanbanquypham table {
+                width:100% !important;
+        }
+        .vanbanquypham .ExContent td {
+                display: block !important;
+                width: 100% !important;
+        }
+        .vanbanquypham .ExContent tr:nth-child(1) td:nth-child(2){
+                display: block !important;
+                width: 100% !important;
+        }
+        .vanbanquypham .ExContent tr td:nth-child(1){
+                margin: 3px 0 !important;
+                color: dimgray;
+        }
+        .vanbanquypham .ExContent td select,.vanbanquypham .ExContent td input{
+                width: 100% !important;
+                display: block !important;
+                box-sizing: border-box !important;
+                padding: 3px !important;
+                border: 1px solid #ddd;
+                height: auto !important;
+                border-radius: 5px;
+        }
+        .vanbanquypham input.Search,.vanbanquypham  input.Cancel {
+                height: 30px !important;
+                width: auto !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                border: none !important;
+                font-weight: bold;
+                font-size: 12px !important;
+                margin-top: 5px !important;
+                display: inline-block !important;
+        }
+        .vanbanquypham input.Search{
+                flex-grow: 5 !important;
+                margin-right: 5px !important;
+        }
+        .vanbanquypham input.Cancel{
+                flex-grow: 1 !important;
+                background: silver !important;
+        }
+        .vanbanquypham .ExContent>table>tbody>tr:last-child>td:nth-child(1){
+                display: none !important;
+        }
+        .vanbanquypham .ExContent>table>tbody>tr:last-child>td:nth-child(2)>div{
+                display: flex !important;
+        }
+        .vanbanquypham .List>div>table,
+        .vanbanquypham .List>div>table>tbody>tr>td,
+        .vanbanquypham .List>div>table>tbody>tr>th{
+                border: none !important;
+                padding: 5px 0px !important;
+        }
+        .vanbanquypham .List>div>table>tbody>tr>th{
+                display: none !important;
+        }
+        .vanbanquypham .List>div>table>tbody>tr{
+                position:relative !important;
+                ;
+                border-bottom: 1px solid #e5e5e5 !important;
+                ;
+        }
+        .vanbanquypham .List>div>table>tbody>tr>td:nth-child(1), 
+        .vanbanquypham .List>div>table>tbody>tr>td:nth-child(2){
+                display: inline-block !important;
+        }
+        .vanbanquypham .List>div>table>tbody>tr>td{
+                display: block !important;
+                text-align: left !important;
+        }
+        .vanbanquypham .List>div>table>tbody>tr>td:nth-child(1),
+        .vanbanquypham .List>div>table>tbody>tr>td:nth-child(3) *{
+                font-weight: bold !important;
+                margin-right: 10px !important;
+        }
+        .vanbanquypham .List>div>table>tbody>tr>td:nth-child(2) *{
+                font-style: italic !important;
+                font-size: 11px !important;
+        }
+        .vanbanquypham .List>div>table>tbody>tr>td:nth-child(4){
+                text-align: right;
+        }
+        .vanbanquypham .ListControl .List>div>table>tbody>tr>td:nth-child(4)>a {
+                background: #b80002;
+                padding: 2px 10px;
+                border-radius: 2px;
+                color: white;
+                font-size: 11px !important;
+        }
+        .vanbanquypham {
+                width: 100vw;
+                padding: 5px !important;
+        }
+        li.TopMenuActive {
+                background: lightskyblue;
+        }
+        .VerticalMenuControl .MenuList .second {
+                width: 100% !important;
+                background: white;
+                padding: 5px;
+        }
+        .VerticalMenuControl .MenuList li.top{
+                width: 100% !important;
+                height: auto;
+                background-size: 100% 300px;
+        }
+        .VerticalMenuControl .MenuList .second li.sub {
+                width: 100% !important;
+        }
+        .QuestionList .DetailQuestion {
+                padding: 0;
+        }
+        .QuestionList .DetailQuestion .Content .blockTitle .divFirst span {
+                line-height: 1.3 !important;
+        }
+        .QuestionList .DetailQuestion .Content .blockanswer .blockTitleanswer .divFirst, .divSecond, .divThird, .divFourth {
+                display: block;
+                height: auto !important;
+                line-height: 1.4 !important;
+                font-size: 13px !important;
+                margin: 2px 0;
+        }
+        .QuestionList .DetailQuestion .Content .blockanswer .divFirst span {
+                line-height: 1.3 !important;
+        }
+        .QuestionList .DetailQuestion .Content {
+                margin-top: 45px;
+        }
+        .QuestionList .DetailQuestion .Content .blockQues fieldset legend {
+                width: auto !important;
+                margin: 5px;
+                font-weight: bold;
+        }
+        .QuestionList .DetailQuestion .Content .blockQues {
+                text-align: justify;
+        }
+        .QuestionList .DetailQuestion .Content .blockanswer fieldset legend {
+                width: auto !important;
+                margin: 5px;
+                font-weight: bold;
+        }
+        .QuestionList .DetailQuestion .Content .blockanswer .detail {
+                text-align: justify;
+        }
+        .UIChiTiet fieldset table {
+                width: 100%;
+        }
+        .UIChiTiet .txtSearch {
+                width: 100% !important;
+                border: 1px solid silver;
+                border-radius: 5px;
+        }
+        .UIChiTiet .ddCoQuan, .ddLinhVuc {
+                width: 100% !important;
+        }
+        .UIChiTiet {
+                padding: 5px;
+        }
+        .UIChiTiet>div>fieldset>table>tbody>tr>td:nth-child(1){
+                font-weight: bold;
+                padding: 5px;
+                font-size: 13px;
+                color: #757575;
+        }
+        .UIChiTiet fieldset {
+                padding: 5px;
+        }
+        .UIChiTiet fieldset > legend {
+                width: auto !important;
+                margin: 5px;
+        }
+        .NewSteeringControl .DetailScroll{
+                z-index: 9999;
+                min-height: 250px;
+        }
+        .ArticleDetailControl video {
+                width: 100%;
+        }
+        .UIGopYVanBan .view {
+                padding: 5px !important;
+        }
+        .UIGopYVanBan .form-gop-y {
+                padding: 5px !important;
+        }
+        .UIGopYVanBan .view a {
+                margin: 5px 0;
+                display: block;
+        }
+        .navbar-overlay {
+                position: fixed !important;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                height: 100vh !important;
+                width: 100vw !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0;
+                background: rgba(0, 0, 0, 0.3);
+                display: none;
+        }
+        #form1 {
+                margin: 0;
+        }
+        .ImageSlideShow div.div-thumb{
+                width: auto !important;
+                padding: 0px 0px;
+        }
+        div.div-thumb {
+                height: auto !important;
+                overflow: hidden;
+                position: relative;
+        }
+        div.div-thumb ul.ThumbList {
+                display: block !important;
+                list-style: none outside none;
+                margin: 0 !important;
+                padding: 4px 0 0 !important;
+                position: relative !important;
+                width: 1000% !important;
+        }
+        div.div-thumb ul.ThumbList li.li-thumb {
+                display: block !important;
+                float: left !important;
+                padding: 0 3px 0 0 !important;
+        }
+        div.div-thumb ul.ThumbList li.li-thumb img.image-thumb {
+                transition: all 1s ease 0s;
+                border: 3px solid #FFFFFF;
+                display: block !important;
+                height: 90px !important;
+                opacity: 0.5;
+                width: 120px !important;
+        }
+        div.div-thumb ul.ThumbList li.li-thumb img.image-thumb:hover {
+                border: 3px solid #444444;
+                opacity: 1;
+        }
+        div.div-thumb .selected {
+                border: 3px solid #444 !important;
+                display: block !important;
+                height: 120px !important;
+                opacity: 1 !important;
+                width: 120px !important;
+        }
+        .UIBannerControl .co {
+                top: 0;
+        }
+        .PollControl {
+                padding: 5px;
+                margin: 0;
+                width: 100vw;
+                background: white;
+        }
+        .PollControl td span a, .PollControl td span {
+                margin: 0 !important;
+                float: none !important;
+                font-size: 13px;
+        }
+        .PollControl table{
+                width: 100% !important;
+                table-layout: fixed;
+        }
+        .PollControl>table{
+                background:  #d0ebff99;
+                padding: 5px !important;
+                display: block;
+        }
+        .PollControl .ShowResult{
+                margin: 0 !important;
+                margin-top: 15px !important;
+                font-size: 13px;
+                float: none !important;
+        }
+        .SliderFeature .LeftPanel {
+                height: 300px !important;
+        }
+        .jContainer .jBox .jFrame {
+                max-width: 100% !important;
+                max-height: 100% !important;
+        }
+        .ShortArticle marquee {
+                width: 100% !important;
+        }
+        .ServiceCategory ul li {
+                display: block !important;
+                width: 100%;
+        }
+        .UIProtalList .ul-tab .NormalTab .text {
+                border: none !important;
+        }
+        .RSS table tr {
+                display: flex;
+        }
+        .ArticleFeedbackControl .FeedbackForm {
+                width: 100%;
+                background: none;
+        }
+        .ArticleFeedbackControl table td input, .ArticleFeedbackControl table td textarea {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                padding: 5px !important;
+                min-height: 25px;
+                border: 1px solid silver;
+        }
+        .ArticleFeedbackControl {
+                width: 100vw !important;
+                padding: 30px 5px 10px 5px !important;
+        }
+        .ArticleFeedbackControl .PanelButton {
+                text-align: center;
+        }
+        .ArticleFeedbackControl .PanelButton input[type='submit']{
+                border: none;
+                padding: 4px 20px;
+                background: #e4e4e4;
+                font-size: 13px;
+        }
+        .ArticleFeedbackControl .ColRight input.Verifier{
+                width: 100px !important;
+                margin-left: 5px;
+        }
+        .ArticleFeedbackControl table td.ColRight {
+                display: flex;
+                align-items: center;
+        }
+        .UICalendarControl {
+                margin: 0;
+                padding: 5px;
+                width: 100vw;
+        }
+        .UICalendarControl table{
+                table-layout:fixed !important;
+        }
+        .UICalendarControl td{
+                display: table-cell !important;
+        }
+        .UIWeekCalendar {
+                margin: 0;
+                padding: 5px;
+                width: 100vw;
+        }
+        .UIWeekCalendar table{
+                table-layout:fixed !important;
+        }
+        .UIWeekCalendar td{
+                display: table-cell !important;
+        }
+        .ImageCategory img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+        }
+        .LibraryList>table>tbody>tr {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+        }
+        .LibraryList td.LibraryItem {
+                flex-grow: 1;
+                justify-content: center;
+                width: 50% !important;
+        }
+        .LibraryList td.LibraryItem>div{
+                width: 100% !important;
+                margin: 0;
+                height: 100% !important;
+                padding: 5px;
+        }
+        .LibraryList td.LibraryItem>div>a{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100% !important;
+        }
+        .LibraryList td.LibraryItem>div>.item>img{
+                width: 100% !important;
+                margin-bottom: 10px;
+        }
+        .ArticleOfCat>li>a{
+                display: inline-block;
+                margin-top: 5px;
+        }
+        .ArticleOfCat>li>p{
+                margin: 0;
+        }
+        .YoutubeVideoList .GridPanel ul {
+                width: 100vw !important;
+                padding: 5px !important;
+                display: flex;
+                flex-wrap: wrap;
+        }
+        .YoutubeVideoList .GridPanel ul li.VideoItem {
+                flex-grow: 1;
+                width: 45% !important;
+        }
+        .MenuListofSite {
+                width: 100% !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: auto !important;
+        }
+        .VerticalMenuControl .MenuList li.top:last-child {
+                border-radius: 0;
+        }
+        .MenuListofSite ul.parent {
+                width: 100% !important;
+                align-items: center;
+                display: flex !important;
+                position: static !important;
+                height: auto !important;
+                flex-direction: column;
+        }
+        .MenuListofSite ul.parent li {
+                width: 100%!important;
+                margin: 0 !important;
+                padding: 5px !important;
+                /* background-size: 500% !important; */
+                /* background-position: center !important; */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+        }
+        .MenuListofSite .parent>li .columns li{
+                padding-left: 20px !important;
+        }
+        .UIArticleListContent {
+                margin: 0 !important;
+                padding: 0 5px;
+                border: none;
+                width: 100vw;
+                background: transparent;
+                margin-bottom: 5px !important;
+        }
+        .UIArticleListContent .WrapAll{
+                background: white;
+        }
+        .UIArticleListContent .Wrap {
+                text-align: justify;
+        }
+        .UIArticleListContent .Wrap .third-box li {
+                margin-left: 10px;
+        }
+        .UIArticleListContent .second-box .item {
+                height: auto !important;
+                width: 100% !important;
+        }
+        .UIArticleListContent .Wrap .second-box {
+                /* padding: 5px; */
+                display: flex;
+                flex-wrap: wrap;
+        }
+        .ImageCategory .LibraryList {
+                width: 100%;
+                padding: 10px 0 0;
+        }
+        ul.social-block {
+                display: none !important;
+        }
+        .SimilarArticleControl .ArticleList .GridItem {
+                width: 45%;
+                flex-grow: 1;
+        }
+        .UIChiTiet .ResultTable td {
+                display: table-cell !important;
+        }
+        .UIChiTiet .Detail .TTHC-Table td {
+                border: none;
+        }
+        /* ===== tandc.it4: common  menu list of site====*/
+        .MenuListofSite .parent>li .columns {
+                position: unset;
+        }
+        .MenuListofSite .parent>li .columns li {
+                background-image: none;
+        }
+}
+.ArticlePostDate.inline {
+        color: var(--secondary);
+        font-style: italic;
+        display: inline;
+}
+/* ===== tandc.it4: default font size and font family article detail ====*/
+.ArticleDetailControl .ArticleContent * {
+        font-size: 10.5pt !important;
+        font-family: Arial !important;
+        line-height: 20pt !important;
+}
+.ArticleDetailControl .ArticleContent sup {
+        font-size: 8pt !important;
+}
+.ArticleInMenu table,
+.ArticleContent table {
+        border-collapse: initial !important
+}
+.SimilarArticleControl .ArticleList table, .SimilarArticleControl .ArticleList td, .SimilarArticleControl .ArticleList tr {
+        border: 1px solid #fff;
+}
+.SimilarArticleControl .ArticleList .listItem {
+        padding-left:10px;
+}
+.SimilarArticleControl .ArticleList table tr:last-child {
+        float:gvPager;
+}
+.SimilarArticleControl .ArticleList .gvPager td {
+        display:table-cell !important;
+}
+.SimilarArticleControl .ArticleList .gvPager{
+        font-weight:bold;
+        color:red;
+}
+.marquee {
+        overflow: hidden;
+        position: relative;
+        color: #333;
+        height: 30px;
+        display: inline-block;
+        width: 100%;
+        gap: 20PX;
+        float: left;
+        white-space: nowrap;
+}
+.marquee * {
+        /* position: absolute; */
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        line-height: 30px;
+        text-align: center;
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        -moz-animation: scroll-left 1s linear infinite;
+        -webkit-animation: scroll-left 1s linear infinite;
+        animation: scroll-left 20s linear infinite;
+        /* float: left; */
+}
+.marquee.w-300{
+        height: auto;
+}
+.marquee.w-300 * {
+        width: 300px;
+        height: auto;
+}
+@-moz-keyframes scroll-left {
+        0% {
+                -moz-transform: translateX(-100%);
+        }
+        100% {
+                -moz-transform: translateX(-200%);
+        }
+}
+@-webkit-keyframes scroll-left {
+        0% {
+                -webkit-transform: translateX(100%);
+        }
+        100% {
+                -webkit-transform: translateX(-100%);
+        }
+}
+@keyframes scroll-left {
+        0% {
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+        }
+        100% {
+                -moz-transform: translateX(-400%);
+                -webkit-transform: translateX(-400%);
+                transform: translateX(-400%);
+        }
+}
+@media only screen and (max-width: 1023px){
+.marquee.w-300{
+        width: 100vw;
+}
+}
+
+.UISocialShare .zalo-share-button{
+        display:none!important;
+}

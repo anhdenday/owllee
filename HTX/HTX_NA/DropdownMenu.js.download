@@ -1,0 +1,85 @@
+﻿(function ($) {
+    $.fn.DropdownMenu = function (options) {
+        if (window.innerWidth > 768) {
+            var params = { menushow: 200, aticleshow: 4000 };
+            params = jQuery.extend(options, params);
+            var main = $(this);
+            var menulist = main.children('.MenuList');
+            var menuitems = menulist.find('li').hover(
+                function () { $(this).children('ul').show(500); },
+                function () { $(this).children('ul').hide(); }
+            );
+
+            var advancebar = main.children('.AdvanceBar');
+            var articles = advancebar.children('.NewsBar').children('.item');
+            var interval;
+
+            var selectedArticle;
+            var articleRun = function () {
+                i++;
+                if (i == articles.length) i = 0;
+                selectedArticle.hide('blind', 200, function () { selectedArticle = $(articles[i]).show('slide', params.menushow); })
+            };
+
+            if (articles) {
+                selectedArticle = $(articles[0]).show();
+                var i = 0;
+                if (articles.length > 1) {
+
+                    articles.hover(
+                        function () { clearInterval(interval); },
+                        function () { interval = setInterval(function () { articleRun() }, params.aticleshow); }
+                    );
+
+                    interval = setInterval(function () { articleRun() }, params.aticleshow);
+                }
+            }
+        }
+        
+    }
+    
+
+})(jQuery);
+function megamenu() {
+    var url = location.href;
+    var regex = /mega-menu/;
+    var match = url.match(regex);
+
+    if (match) {
+        window.location = localStorage.getItem('temp');;
+    } else {
+        localStorage.setItem('temp', url);
+        window.location = "/mega-menu";
+    }
+}
+
+
+// Scroll menu ngang on top
+$(document).ready(function () {
+    var dropdownmenu = $('.UIDropdownMenu_nan');
+    var searchbox = $('.SingleSearch .SearchBox');
+    $(window).scroll(function () {
+        if ($(window).innerWidth() > 768) {
+            var scrollTop = $(window).scrollTop()
+            var elementOffset = dropdownmenu.offset().top
+            var distance = (elementOffset - scrollTop)
+
+            if (distance <= 110) {
+                dropdownmenu.css("position", "");
+                searchbox.css("position", "");
+                searchbox.css("right", "");
+                searchbox.css("top", "");
+            }
+            if (scrollTop > 110) {
+                dropdownmenu.css("position", "fixed");
+                dropdownmenu.css("z-index", "2");
+                dropdownmenu.css("width", "100%");
+                dropdownmenu.css("top", "0");
+                searchbox.css("position", "fixed");
+                searchbox.css("right", "17%");
+                searchbox.css("top", "5px");
+            }
+        }    
+    });
+});
+

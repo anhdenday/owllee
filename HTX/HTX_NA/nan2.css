@@ -1,0 +1,126 @@
+.VerticalMenuControl {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    padding: 0;
+    width: 100%;
+}
+.VerticalMenuControl ul .sublink {
+    list-style: outside none none;
+}
+.VerticalMenuControl .MenuList li.sub:hover a {
+        color: #d20209;
+}
+.VerticalMenuControl .MenuList {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.VerticalMenuControl .MenuList li.top:hover a {
+    color: #b80002;
+      
+}
+.VerticalMenuControl .MenuList .top .sublink:hover {
+}
+.VerticalMenuControl .MenuList li.top {
+    /*background: url(images/ir.png) no-repeat scroll left 7px center, rgb(6 107 187) repeat scroll 0 0;*/
+        background: #066bbb;
+    display: block;
+    margin: 2px 0;
+    position: relative;
+    width: 100%;
+}
+.VerticalMenuControl .MenuList .top a:hover {
+    text-decoration-line: none;
+    color: red !important;
+}
+.VerticalMenuControl .MenuList .second li.sub {
+    list-style: inside none disc;
+    margin: 0;
+    padding: 0 0 0 15px;
+    position: relative;
+}
+.VerticalMenuControl .MenuList .second li.sub:hover {
+}
+.VerticalMenuControl .MenuList .sublink a {
+    color: #b80002;
+    display: block;
+    line-height: 24px;
+    padding-left: 16px;
+}
+.VerticalMenuControl .MenuList .top a {
+    color: #fff;
+    display: inline-block;
+    font: bold 12px/25px arial;
+    padding-left: 26px;
+    #white-space: nowrap;
+}
+.VerticalMenuControl .MenuList .top ul li a {
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.VerticalMenuControl ul .sublink:hover {
+    color: #b82805;
+}
+.VerticalMenuControl .MenuList li {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.VerticalMenuControl .MenuList .second a {
+    border: medium none;
+    color: #424242 !important;
+    font: 10pt/25px arial;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+}
+.VerticalMenuControl .MenuList .second a:hover {
+ color: red !important;
+}
+.VerticalMenuControl .MenuList .dropdown {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #c0c0c0;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 180px;
+    z-index: 1000;
+}
+.VerticalMenuControl .MenuList .second .dropdown {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #c0c0c0;
+    left: 100%;
+    margin: 0 0 0 10px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 150px;
+    z-index: 1000;
+}
+.VerticalMenuControl .MenuList .second .dropdown li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.VerticalMenuControl .MenuList .second .dropdown a {
+    border: medium none;
+    color: #424242 !important;
+    font: 10pt/30px arial;
+    height: 30px;
+    text-transform: none;
+}
+.VerticalMenuControl .MenuList .second {
+    color: #b80002;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: white;
+    /* background: rgba(0, 0, 0, 0) url("images/verbar.png") repeat scroll left top */
+}
+.VerticalMenuControl .MenuList .dropdown ul {
+    margin: 0;
+    padding: 0;
+}

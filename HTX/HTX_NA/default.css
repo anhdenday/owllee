@@ -1,0 +1,100 @@
+
+.MainStructure .FooterBanner {
+background: rgba(252,28,28,1);
+background: -moz-linear-gradient(top, rgba(252,28,28,1) 0%, rgba(219,7,7,1) 0%, rgba(217,11,11,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,28,28,1)), color-stop(0%, rgba(219,7,7,1)), color-stop(100%, rgba(217,11,11,1)));
+background: -webkit-linear-gradient(top, rgba(252,28,28,1) 0%, rgba(219,7,7,1) 0%, rgba(217,11,11,1) 100%);
+background: -o-linear-gradient(top, rgba(252,28,28,1) 0%, rgba(219,7,7,1) 0%, rgba(217,11,11,1) 100%);
+background: -ms-linear-gradient(top, rgba(252,28,28,1) 0%, rgba(219,7,7,1) 0%, rgba(217,11,11,1) 100%);
+background: linear-gradient(to bottom, rgba(252,28,28,1) 0%, rgba(219,7,7,1) 0%, rgba(217,11,11,1) 0%);
+        background: -webkit-linear-gradient(left, #046bbb 0%, #046bbb 100%) 0% 0% repeat scroll rgba(0, 0, 0, 0);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc1c1c', endColorstr='#d90b0b', GradientType=0 );
+  
+  
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    text-align: center;
+    width: 1052px;
+}
+
+* {
+    text-rendering: geometricprecision;
+}
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+a {
+    color: #424242;
+    font: 13px arial;
+    text-decoration: none;
+}
+img {
+    border: medium none;
+    margin-bottom: 3px;
+}
+.MainStructure {
+    background: rgba(0, 0, 0, 0) url("images/hot.png") repeat scroll 0 0;
+    text-align: center;
+}
+.MainStructure .TopBanner {
+    margin: 0 auto;
+    width: 100%;
+}
+.MainStructure .TopBar {
+    background: #fbfcea none repeat scroll 0 0;
+    display: inline-block;
+    margin-top: 0;
+    text-align: justify;
+    width: 1052px;
+    /* border-radius:100px 100px 0 0; */
+}
+.MainStructure .ContentBanner {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.MainStructure .MainContent {
+    background: #fbfcea none repeat scroll 0 0;
+    display: inline-table;
+    margin: 0 auto;
+    padding: 3px 0 10px;
+    vertical-align: top;
+    width: 1052px;
+}
+.MainStructure .LeftBar {
+    padding: 0 15px 0 10px;
+    text-align: justify;
+    vertical-align: top;
+}
+.MainStructure .ContentBar {
+    padding: 0 10px 0 0;
+    text-align: justify;
+    vertical-align: top;
+}
+
+.MainStructure .FooterBar {
+    border-radius: 0 0 10px 10px;
+    display: inline-block;
+    text-align: justify;
+    width: 1025px;
+      position: relative;
+
+}
+@media only screen and (max-width: 768px) {
+    .MainStructure .ContentBar {
+        display: block !important;
+        /* overflow-y: scroll; */
+        background: white;
+        /* margin-top: 30px !important; */
+        /* padding-bottom: 40px !important; */
+        /* height: 100vh !important; */
+        width: 100vw !important;
+        box-shadow: 0 0 10px #444444;
+        padding-top: 5px !important;
+      }
+    .bottom-tool {
+        display: none;
+    }
+}

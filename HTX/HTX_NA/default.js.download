@@ -1,0 +1,18 @@
+$(document).ready(function () {
+    $('.MenuList .top a:first-child').click(function () {
+        $('.MenuList .second').toggle();
+    })
+});
+
+function showContent(thiz) {
+    var x = $(thiz).parent().find("ul.second");
+    if (x.css("display") == "none") {
+        x.css("display", "block");
+        $(thiz).removeClass("hide");
+        $(thiz).addClass("show");
+    } else {
+        x.css("display", "none");
+        $(thiz).removeClass("show");
+        $(thiz).addClass("hide");
+    }
+}

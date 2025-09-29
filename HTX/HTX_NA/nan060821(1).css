@@ -1,0 +1,65 @@
+
+.OnlineCounter li a {
+    display: inline-block;
+    white-space: nowrap;
+  	
+}
+.OnlineCounter li span {
+    display: inline-block;
+    white-space: nowrap;
+}
+.OnlineCounter .MultiRow{
+    color: #444444;
+    height: 75px;
+    line-height: 18px;
+    margin: 8px 0 25px;
+}
+.OnlineCounter .MultiRow ul {
+    background: #ffffff none repeat scroll 0 0;
+    height: 35px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 10px;
+}
+.OnlineCounter .Header {
+    background: url(images/ir.png) no-repeat scroll left 7px center, rgb(6 107 187) repeat scroll 0 0;
+    border-radius: 5px 5px 0 0;
+    height: 25px;
+}
+.OnlineCounter .Header span {
+    color: #ffffff;
+    font: bold 10pt/25px arial;
+    padding-left: 30px;
+}
+.OnlineContainer > li {
+    float: left;
+    margin-right: 10px;
+}
+.OnlineCounter .OneRow {
+    position: relative;
+    width: 100%;
+}
+.OnlineCounter .OneRow .OnlineWrap {
+    margin: 0 auto;
+    position: relative;
+    width: 1025px;
+}
+.OnlineCounter .OneRow .OnlineContainer {
+    bottom: 25px;
+    display: inline-block;
+    list-style: outside none none;
+    position: absolute;
+    right: 5px;
+    text-align: left;
+}
+.OnlineCounter .OneRow .OnlineContainer > li {
+    border-right: 1px solid #fff;
+    display: inline-block;
+    padding: 0 10px;
+}
+.OnlineCounter .OneRow .OnlineContainer > li > span {
+    color: #fff;
+}
+.OnlineCounter .OneRow .OnlineContainer > li:last-child {
+    border-right: none;
+}

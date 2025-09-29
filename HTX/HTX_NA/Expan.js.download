@@ -1,0 +1,28 @@
+﻿(function ($) {
+	var currentCol;
+	var currentActive;
+
+	$.fn.Expan = function () {
+		var self = $(this);
+		var expans = self.find('ul.parent>li');
+		$.each(expans, function () {
+			var col = $(this).find('.columns').first();
+			$(this).click(function () {
+				$(currentCol).hide();
+				$(currentActive).removeClass('active');
+
+				currentActive = $(this);
+				currentCol = col;
+				$(col).show();
+				$(this).addClass('active');
+				$('.MenuListofSite').height($(currentCol).height() + 80);
+			});
+		});
+
+		if (expans) {
+			if (expans.length > 0) {
+				$(expans.get(0)).click();
+			}
+		}
+	}
+})(jQuery);

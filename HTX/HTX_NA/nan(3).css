@@ -1,0 +1,19 @@
+
+.WebLink {
+    margin: 0;
+}
+.WebLink .HeadLink {
+    background: url(images/ir.png) no-repeat scroll left 7px center, rgb(6 107 187) repeat scroll 0 0;
+    border-radius: 5px 5px 0 0;
+    height: 25px;
+}
+.WebLink .HeadLink .Title {
+    color: #ffffff;
+    font: bold 10pt/25px arial;
+    padding-left: 30px;
+}
+.WebLink .Content ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}

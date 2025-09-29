@@ -1,0 +1,126 @@
+
+.DropdownMenu {
+    /* background: #c60000 none repeat scroll 0 0; */
+    /* border-top: 1px solid #ff8e51; */
+    height: 35px;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #046bbb 0%, #046bbb 100%) 0% 0% repeat scroll rgba(0, 0, 0, 0);
+}
+.DropdownMenu ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.DropdownMenu .MenuList {
+    margin: 0 auto;
+}
+.DropdownMenu .MenuList li {
+    display: block;
+    float: left;
+    list-style: outside none none;
+}
+.DropdownMenu .MenuList .TopMenuActive, .TopMenu:hover {
+    height: 35px;
+    position: relative;
+}
+.DropdownMenu .MenuList .TopMenu:hover, .TopMenuActive {
+    background: #082276;
+    background-size: inherit;
+    padding: 0 12px;
+}
+.DropdownMenu .MenuList .TopMenu {
+    background: rgba(0, 0, 0, 0) url("/Themes/Default/Images/phantach.gif") no-repeat scroll right center;
+    float: left;
+    height: 35px;
+    padding: 0 8px;
+    position: relative;
+}
+.DropdownMenu .MenuList .TopMenu a:hover, .TopMenuActive a:hover {
+    height: 35px;
+}
+.DropdownMenu .MenuList .TopMenu a {
+    color: #fff;
+    font: bold 12px/35px arial;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #000;
+    text-transform: uppercase;
+}
+.DropdownMenu .MenuList .TopMenuActive a {
+    color: #fff;
+    font: bold 12px/35px arial;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #000;
+    text-transform: uppercase;
+}
+.DropdownMenu .MenuList .TopMenu:hover a {
+    color: #fff;
+    text-decoration: none;
+}
+.DropdownMenu .MenuList .TopMenu .HasChildren, .TopMenuActive .HasChildren {
+    background: rgba(0, 0, 0, 0) url("images/d.png") no-repeat scroll center bottom 2px;
+    display: block;
+    height: 35px;
+}
+.DropdownMenu .MenuList .Dropdown {
+    background: #f0f0f0 none repeat-x scroll left top;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    color: #111111;
+    display: inline-block;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    width: auto;
+    z-index: 1000;
+}
+.DropdownMenu .MenuList .Dropdown .sub:hover a {
+    color: #222;
+}
+.DropdownMenu .MenuList .Dropdown .sub {
+    display: block;
+    height: 35px;
+    position: relative;
+    width: 100%;
+}
+.DropdownMenu .MenuList .Dropdown .sub:hover {
+    background: #fffce0 none repeat-x scroll left top;
+    color: #222;
+    cursor: pointer;
+}
+.DropdownMenu .MenuList .Dropdown .sub a {
+    color: #111111;
+    display: block;
+    font: 10pt/35px arial;
+    height: 35px;
+    margin: 0;
+    padding: 0 12px;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: nowrap;
+}
+.DropdownMenu .MenuList .Popup {
+    background: #ecedef none repeat scroll 0 0;
+    display: inline-block;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 180px;
+    z-index: 1001;
+}
+.DropdownMenu .MenuList .Popup .sub:hover {
+    background: #fffce0 none repeat-x scroll left top;
+}
+.DropdownMenu .MenuList .Popup .sub {
+    position: relative;
+}
+.DropdownMenu .MenuList .Popup .sub a {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.DropdownMenu .AdvanceBar {
+    background: #cfcfcf url("images/advance_bg.png") repeat-x scroll 0 0;
+    display: none;
+    height: 30px;
+    line-height: 30px;
+}

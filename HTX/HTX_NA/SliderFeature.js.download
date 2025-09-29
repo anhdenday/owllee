@@ -1,0 +1,72 @@
+﻿(function ($) {
+    $.fn.SliderFeature = function (options) {
+        var params = { effectivetime: 4000, effectivetype: 'show' };
+        params = jQuery.extend(params, options);
+        var img, text, img1, text1;
+        var sliderFeature = $(this);
+        var panelFeature = sliderFeature.find('.LeftCol');
+        var listArticle = sliderFeature.find('.ArticleList');
+        var articles = listArticle.children();
+        var link = panelFeature.children('.LeftPanel').css({ width: panelFeature.width(), height: panelFeature.height() });
+
+
+
+        var effectRun = function (itm) {
+            //text = link.children('.text').show();
+            //img = link.children('img'); if (img != null) img.css('zIndex', 0).show();
+            link.empty();
+            text = link.children('.text').show();
+            img = link.children('img'); if (img != null) img.css('zIndex', 0).show();
+
+            img1 = itm.find('a').clone();
+            if (img1 != null) img1.css('zIndex', 1).appendTo(link);
+            text1 = $('<div class="text"><div class="text-title">' + itm.find('.Title').text() + '</div><div class="text-summary">' + itm.find('.Summary').text() + '</div></div>').css('zIndex', 2).appendTo(img1);
+
+
+        };
+
+        var displayFeature = function (itm) {
+            articles.removeAttr('class');
+            itm.attr('class', 'ArticleItemSelected');
+            effectRun(itm);
+        };
+
+        var inteval;
+        var loop = function () {
+            inteval = setInterval(
+                function () {
+                    var i = articles.index(selecteditem) + 1;
+                    selecteditem = (i < articles.length) ? $(articles[i]) : articles.first();
+                    displayFeature(selecteditem);
+                },
+                params.effectivetime);
+        }
+
+
+        if (articles.length > 0) {
+            var selecteditem = articles.first();
+            displayFeature(selecteditem);
+            loop();
+
+            if (articles.length > 1) {
+
+                articles.hover(function () {
+                    text = link.children('.text').stop().show()
+                    img = link.children('a'); if (img != null) img.css('zIndex', 0).stop().show();
+                    selecteditem = $(this);
+                    clearInterval(inteval);
+                    displayFeature(selecteditem);
+                }, function () {
+
+                    loop();
+                });
+
+            }
+        }
+    }
+})(jQuery);
+
+
+
+
+

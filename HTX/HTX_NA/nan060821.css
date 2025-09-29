@@ -1,0 +1,80 @@
+
+.SliderFeature {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    margin: 0 0 10px;
+}
+.SliderFeature .RightCol {
+    background: #ffffff none repeat scroll 0 0;
+    max-width: 270px;
+    vertical-align: top;
+    width: 270px;
+}
+.SliderFeature .LeftCol {
+    padding: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+.SliderFeature .LeftPanel {
+    overflow: hidden;
+    position: relative;
+}
+.SliderFeature .LeftCol .LeftPanel img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+.SliderFeature .LeftCol .text {
+    background-color: #eeeeee;
+    bottom: 0;
+    color: Black;
+    font: bold 10pt Arial;
+    left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+    height: 50px;
+}
+.SliderFeature .LeftCol .text div {
+    display: inline-block;
+    padding: 6px;
+}
+.SliderFeature .ArticleList {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    width: 270px;
+}
+.SliderFeature .ArticleList li:hover a {
+    
+}
+.SliderFeature .ArticleList li {
+    display: inline-block;
+    padding: 4px;
+        width: 100%;
+}
+.SliderFeature .ArticleList .ArticleItemSelected {
+    background: #066bbb none repeat scroll 0 0;
+}
+.SliderFeature .ArticleList .ArticleItemSelected a {
+    color: rgb(255, 255, 255);
+}
+.SliderFeature .ArticleList li:hover {
+    color: rgb(255, 255, 255);
+}
+.SliderFeature .ArticleList li .Image {
+    display: inline-block;
+    float: left;
+    height: 50px;
+    margin-right: 4px;
+    text-align: left;
+    width: 60px;
+}
+.SliderFeature .Header {
+    display: none;
+}

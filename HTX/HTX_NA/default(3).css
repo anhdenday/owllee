@@ -1,0 +1,54 @@
+
+.MultiFunctionControl {
+    position: relative;
+}
+.MultiFunctionControl .time {
+    position: absolute;
+    right: 5px;
+    top: 193px;
+}
+.MultiFunctionControl img {
+    width: 100% !important;
+}
+.MultiFunctionControl .BannerMenu {
+   /* background: rgba(51, 51, 51, 0.5) none repeat scroll 0 0;
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    font: bold 9pt arial;
+    padding: 4px 10px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 1020px;*/
+         background: rgb(251 252 234) none repeat scroll 0 0;
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    font: bold 9pt arial;
+    padding: 4px 10px;
+    text-align: right;
+    text-transform: uppercase;
+    width: auto;
+}
+.MultiFunctionControl .barner1 > img {
+    width: 1040px;
+}
+.MultiFunctionControl .right {
+    float: right;
+    padding-right: 20px;
+}
+.MultiFunctionControl tr td a:hover {
+}
+.MultiFunctionControl ul.social_list {
+    list-style: outside none none;
+}
+.MultiFunctionControl ul.social_list li {
+    float: left;
+    list-style: outside none none;
+    margin-left: 10px;
+}
+.MultiFunctionControl ul.social_list li.first {
+    margin-left: 0;
+}
+.MultiFunctionControl ul.social_list li img {
+    margin: 0 5px 0 3px;
+    vertical-align: middle;
+}
